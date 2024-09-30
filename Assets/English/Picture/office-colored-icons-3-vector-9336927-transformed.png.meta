@@ -1,0 +1,729 @@
+fileFormatVersion: 2
+guid: 47da9a8e69533eb42a71ecf1f3a92baf
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 669
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e651c6c880a6a8d48bda5aeeb290b3bd
+      internalID: 642109581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_1
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 669
+        width: 142
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8afbfd085dd53f49ac9f2f5c5d77fe9
+      internalID: -855349725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_2
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 669
+        width: 142
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa6b77b19251fd41a8eaef2433586d1
+      internalID: 1389810212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_3
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 669
+        width: 143
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3764b9d6afabe094c83361328bf4ae92
+      internalID: 543790393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_4
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 669
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f71983c3ad48df4f873ab7efdddecec
+      internalID: 2026681307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 516
+        width: 140
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bbd200a23937c94ca8fd6e706787a97
+      internalID: 1230110729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_6
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 516
+        width: 142
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 530bf7ad777be004a8dd177161514133
+      internalID: -2103602398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_7
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 516
+        width: 142
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c096032d48d66245a4ff56c1c441b6e
+      internalID: 741925109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_8
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 516
+        width: 142
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c65e05c4e5409754ca5e545f09a9d03e
+      internalID: 435751310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_9
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 516
+        width: 140
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c932aba53f74c4ea3c4098dddea483
+      internalID: -373192429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 363
+        width: 140
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b012c5919251bb488e49b82667f85a6
+      internalID: -225562514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_11
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 363
+        width: 142
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e10f1ecfd24d8b4cb5da3e42c0204cd
+      internalID: 715480502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_12
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 363
+        width: 142
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6bf44719acf3414c9bb47ae5b422c9a
+      internalID: 1073023583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_13
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 363
+        width: 142
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a965f500e863fd4fa2d80f736cfef8c
+      internalID: -488971353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_14
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 363
+        width: 140
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa18205efcaa814183ba77cd9d5acd5
+      internalID: -1022733444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 140
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c43ffbe38adb0a24eb46ab4a0001bf6f
+      internalID: -1084448878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_16
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 210
+        width: 143
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eb07480c335db646bea3a46e11b5326
+      internalID: 51487281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_17
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 210
+        width: 142
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a336177df955de2408d7732da98551ce
+      internalID: -1313531921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_18
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 210
+        width: 143
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04f9488b24582b54fb55acc1744759d4
+      internalID: -1154664794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_19
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 210
+        width: 140
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1655f60712f9f2941a1220a23c4ebbcc
+      internalID: -444065510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 59
+        width: 141
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63f35cf67241ab744a62ba005c96bfb8
+      internalID: -276664280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_21
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 59
+        width: 141
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1048de19acdb0c8479badb3e9abe7037
+      internalID: 887445941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_22
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 57
+        width: 141
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc67cad12c77b104da58be601810e802
+      internalID: -1114986066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_23
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 59
+        width: 141
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 928da2bbfc5068446a926b638ddbc596
+      internalID: 408740220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: office-colored-icons-3-vector-9336927-transformed_24
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 60
+        width: 141
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f763464690c08c46af4e93a7953e782
+      internalID: -656977003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 6f10a2fae8e267441b96d40d49244824
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      office-colored-icons-3-vector-9336927-transformed_0: 642109581
+      office-colored-icons-3-vector-9336927-transformed_1: -855349725
+      office-colored-icons-3-vector-9336927-transformed_10: -225562514
+      office-colored-icons-3-vector-9336927-transformed_11: 715480502
+      office-colored-icons-3-vector-9336927-transformed_12: 1073023583
+      office-colored-icons-3-vector-9336927-transformed_13: -488971353
+      office-colored-icons-3-vector-9336927-transformed_14: -1022733444
+      office-colored-icons-3-vector-9336927-transformed_15: -1084448878
+      office-colored-icons-3-vector-9336927-transformed_16: 51487281
+      office-colored-icons-3-vector-9336927-transformed_17: -1313531921
+      office-colored-icons-3-vector-9336927-transformed_18: -1154664794
+      office-colored-icons-3-vector-9336927-transformed_19: -444065510
+      office-colored-icons-3-vector-9336927-transformed_2: 1389810212
+      office-colored-icons-3-vector-9336927-transformed_20: -276664280
+      office-colored-icons-3-vector-9336927-transformed_21: 887445941
+      office-colored-icons-3-vector-9336927-transformed_22: -1114986066
+      office-colored-icons-3-vector-9336927-transformed_23: 408740220
+      office-colored-icons-3-vector-9336927-transformed_24: -656977003
+      office-colored-icons-3-vector-9336927-transformed_3: 543790393
+      office-colored-icons-3-vector-9336927-transformed_4: 2026681307
+      office-colored-icons-3-vector-9336927-transformed_5: 1230110729
+      office-colored-icons-3-vector-9336927-transformed_6: -2103602398
+      office-colored-icons-3-vector-9336927-transformed_7: 741925109
+      office-colored-icons-3-vector-9336927-transformed_8: 435751310
+      office-colored-icons-3-vector-9336927-transformed_9: -373192429
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
