@@ -57,7 +57,7 @@ public class QuestionsForParents5thGrade : MonoBehaviour
             _fullAnswer = "Ответы за 4 вопрос: \n" + _answer4 + "\n" + "Ответы за 5 вопрос: \n" + _answer5 + "\n" + "Ответы за 6 вопрос \n: "
             + _answer6[0] + "\n" + _answer6[1] + "\n" + _answer6[2] + "\n" + _answer6[3] + "\n" + _answer6[4] + "\n" + _answer6[5]
             + "\n" + _answer6[6] + "\n" + _answer6[7] + "\n" + _answer6[8] + "\n" + _answer6[9] + "\n" + _answer6[10] + "\n" + _answer6[11]
-            + "\n" + _answer6[12] + "\n" + "Ответы за 15 вопрос \n: " + _answer15 + "\n" + "Ответы за 16 вопрос \n: " + _answer16 + "\n";
+            + "\n" + _answer6[12] + "\n" + "Ответы за 15 вопрос:\n " + _answer15 + "\n" + "Ответы за 16 вопрос:\n" + _answer16 + "\n";
         }
         else if (_enabled == false)
         {
