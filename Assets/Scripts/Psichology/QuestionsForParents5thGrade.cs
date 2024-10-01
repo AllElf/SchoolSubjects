@@ -2,28 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class QuestionsForParents5thGrade : MonoBehaviour
 {
+    [Header("Ответы")]
     [SerializeField] string _answer4;
     [SerializeField] string _answer5;
     [SerializeField] string _answer15;
     [SerializeField] string _answer16;
     [SerializeField] string[] _answer6;
+    [Header("ReadingTheText скрипты")]
+    ReadingTheText[] _readingTheText;
+    [Header("Кнопки для 4 вопроса")]
     [SerializeField] Button[] buttons4;
+    [Header("inputField для 4,6,15вопроссов")]
     [SerializeField] InputField inputField4;
     [SerializeField] InputField inputField15;
     [SerializeField] InputField inputField16;
-
-    [SerializeField] InputField[] inputFields_6;
-
+    [Header("RaycastUI скрипт")]
+    [SerializeField] RaycastUI raycastUI;
     private void Start()
     {
-        _answer6 = new string[inputFields_6.Length];
+        _answer6 = new string[GameObject.FindGameObjectsWithTag("Answer6").Length];
+        _readingTheText = GameObject.FindObjectsOfType<ReadingTheText>();
     }
     private void FixedUpdate()
     {
         InputField4Editing();
+        Answer6_1();
     }
     
     public void InputField4Click()
@@ -218,14 +225,12 @@ public class QuestionsForParents5thGrade : MonoBehaviour
     }
     public void Answer6_1()
     {
-        for (int i = 0; i < inputFields_6.Length; i++)
+        for (int i = 0; i < _readingTheText.Length; i++)
         {
-            if (inputFields_6[i].name == "встаёт утром в " && inputFields_6[i].text != "" )
-            {
-                inputFields_6[i].text = "встаёт утром в " + inputFields_6[i].text;
-            }
+            _answer6[i] = _readingTheText[i]._fullText;
         }
     }
+    
     public void Answer15()
     {
         _answer15 = inputField15.text;

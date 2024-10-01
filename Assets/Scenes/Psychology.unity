@@ -1762,6 +1762,7 @@ GameObject:
   - component: {fileID: 35762947}
   - component: {fileID: 35762946}
   - component: {fileID: 35762945}
+  - component: {fileID: 35762948}
   m_Layer: 0
   m_Name: "\u043F\u043E\u0441\u0435\u0449\u0430\u0435\u0442 \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435
     \u0437\u0430\u043D\u044F\u0442\u0438\u044F, \u043A\u0440\u0443\u0436\u043A\u0438,
@@ -1848,19 +1849,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 845555143}
-        m_TargetAssemblyTypeName: QuestionsForParents5thGrade, Assembly-CSharp
-        m_MethodName: Answer6_1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1910,6 +1899,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35762943}
   m_CullTransparentMesh: 1
+--- !u!114 &35762948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35762943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4aa5ccf2ec33a47a20183b6b737cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thisInputField: {fileID: 0}
+  _nameText: 
+  _fullText: 
 --- !u!1 &36109947
 GameObject:
   m_ObjectHideFlags: 0
@@ -4956,6 +4960,7 @@ GameObject:
   - component: {fileID: 102967294}
   - component: {fileID: 102967293}
   - component: {fileID: 102967292}
+  - component: {fileID: 102967295}
   m_Layer: 0
   m_Name: "\u0441\u043C\u043E\u0442\u0440\u0438\u0442 \u0442\u0435\u043B\u0435\u0432\u0438\u0437\u043E\u0440"
   m_TagString: Answer6
@@ -5040,19 +5045,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 845555143}
-        m_TargetAssemblyTypeName: QuestionsForParents5thGrade, Assembly-CSharp
-        m_MethodName: Answer6_1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5102,6 +5095,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102967290}
   m_CullTransparentMesh: 1
+--- !u!114 &102967295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102967290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4aa5ccf2ec33a47a20183b6b737cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thisInputField: {fileID: 0}
+  _nameText: 
+  _fullText: 
 --- !u!1 &103632707
 GameObject:
   m_ObjectHideFlags: 0
@@ -6752,6 +6760,7 @@ GameObject:
   - component: {fileID: 132354698}
   - component: {fileID: 132354697}
   - component: {fileID: 132354696}
+  - component: {fileID: 132354699}
   m_Layer: 0
   m_Name: "\xAB\u0431\u0440\u043E\u0434\u0438\u0442\xBB \u0432 \u0438\u043D\u0442\u0435\u0440\u043D\u0435\u0442\u0435"
   m_TagString: Answer6
@@ -6836,19 +6845,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 845555143}
-        m_TargetAssemblyTypeName: QuestionsForParents5thGrade, Assembly-CSharp
-        m_MethodName: Answer6_1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6898,6 +6895,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132354694}
   m_CullTransparentMesh: 1
+--- !u!114 &132354699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132354694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4aa5ccf2ec33a47a20183b6b737cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thisInputField: {fileID: 0}
+  _nameText: 
+  _fullText: 
 --- !u!1 &132521024
 GameObject:
   m_ObjectHideFlags: 0
@@ -9834,7 +9846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 8601.523}
+  m_AnchoredPosition: {x: 0, y: 6286.793}
   m_SizeDelta: {x: 0, y: 14023.314}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &181831410
@@ -27528,6 +27540,7 @@ GameObject:
   - component: {fileID: 502837115}
   - component: {fileID: 502837114}
   - component: {fileID: 502837113}
+  - component: {fileID: 502837116}
   m_Layer: 0
   m_Name: "\u0438\u0433\u0440\u0430\u0435\u0442 \u0432 \u043A\u043E\u043C\u043F\u044C\u044E\u0442\u0435\u0440\u043D\u044B\u0435
     \u0438\u0433\u0440\u044B"
@@ -27613,19 +27626,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 845555143}
-        m_TargetAssemblyTypeName: QuestionsForParents5thGrade, Assembly-CSharp
-        m_MethodName: Answer6_1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -27675,6 +27676,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502837111}
   m_CullTransparentMesh: 1
+--- !u!114 &502837116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502837111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4aa5ccf2ec33a47a20183b6b737cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thisInputField: {fileID: 0}
+  _nameText: 
+  _fullText: 
 --- !u!1 &504467526
 GameObject:
   m_ObjectHideFlags: 0
@@ -29214,6 +29230,7 @@ GameObject:
   - component: {fileID: 524420522}
   - component: {fileID: 524420521}
   - component: {fileID: 524420520}
+  - component: {fileID: 524420523}
   m_Layer: 0
   m_Name: "\u0440\u0435\u0431\u0451\u043D\u043E\u043A \u0438\u043C\u0435\u0435\u0442
     \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u0443\u044E \u043A\u043E\u043C\u043D\u0430\u0442\u0443"
@@ -29299,19 +29316,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 845555143}
-        m_TargetAssemblyTypeName: QuestionsForParents5thGrade, Assembly-CSharp
-        m_MethodName: Answer6_1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -29361,6 +29366,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524420518}
   m_CullTransparentMesh: 1
+--- !u!114 &524420523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524420518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4aa5ccf2ec33a47a20183b6b737cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thisInputField: {fileID: 0}
+  _nameText: 
+  _fullText: 
 --- !u!1 &534883592
 GameObject:
   m_ObjectHideFlags: 0
@@ -49079,6 +49099,7 @@ GameObject:
   - component: {fileID: 845555142}
   - component: {fileID: 845555141}
   - component: {fileID: 845555143}
+  - component: {fileID: 845555144}
   m_Layer: 0
   m_Name: ScriptManager
   m_TagString: Untagged
@@ -49169,20 +49190,22 @@ MonoBehaviour:
   inputField4: {fileID: 1878138684}
   inputField15: {fileID: 1251782635}
   inputField16: {fileID: 2098652877}
-  inputFields_6:
-  - {fileID: 2014963767}
-  - {fileID: 1692156292}
-  - {fileID: 960991763}
-  - {fileID: 35762945}
-  - {fileID: 1759815367}
-  - {fileID: 2063958072}
-  - {fileID: 502837113}
-  - {fileID: 1475812880}
-  - {fileID: 102967292}
-  - {fileID: 132354696}
-  - {fileID: 1541301048}
-  - {fileID: 524420520}
-  - {fileID: 965378799}
+  raycastUI: {fileID: 845555144}
+--- !u!114 &845555144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845555140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a690ff03ce199d47a0302bed80e68cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycaster: {fileID: 2100543759}
+  eventSystem: {fileID: 317533073}
+  hitObjectName: 
 --- !u!1 &848216412
 GameObject:
   m_ObjectHideFlags: 0
@@ -51231,7 +51254,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1363472274}
   m_HandleRect: {fileID: 1363472273}
   m_Direction: 2
-  m_Value: 0.34564456
+  m_Value: 0.5217362
   m_Size: 0.06263013
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -56977,8 +57000,9 @@ GameObject:
   - component: {fileID: 960991765}
   - component: {fileID: 960991764}
   - component: {fileID: 960991763}
+  - component: {fileID: 960991766}
   m_Layer: 0
-  m_Name: "\u0438\u0437 \u0448\u043A\u043E\u043B\u044B \u0440\u0435\u0431\u0451\u043D\u043A\u0430
+  m_Name: "6.3 \u0438\u0437 \u0448\u043A\u043E\u043B\u044B \u0440\u0435\u0431\u0451\u043D\u043A\u0430
     \u0437\u0430\u0431\u0438\u0440\u0430\u0435\u0442"
   m_TagString: Answer6
   m_Icon: {fileID: 0}
@@ -57062,19 +57086,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 845555143}
-        m_TargetAssemblyTypeName: QuestionsForParents5thGrade, Assembly-CSharp
-        m_MethodName: Answer6_1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -57124,6 +57136,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960991761}
   m_CullTransparentMesh: 1
+--- !u!114 &960991766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960991761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4aa5ccf2ec33a47a20183b6b737cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thisInputField: {fileID: 0}
+  _nameText: 
+  _fullText: 
 --- !u!1 &965378797
 GameObject:
   m_ObjectHideFlags: 0
@@ -57136,6 +57163,7 @@ GameObject:
   - component: {fileID: 965378801}
   - component: {fileID: 965378800}
   - component: {fileID: 965378799}
+  - component: {fileID: 965378802}
   m_Layer: 0
   m_Name: "\u0438\u043C\u0435\u0435\u0442 \u0441\u0432\u043E\u0451 \u043C\u0435\u0441\u0442\u043E
     \u0434\u043B\u044F \u0440\u0430\u0431\u043E\u0442\u044B \u0438 \u0438\u0433\u0440
@@ -57222,19 +57250,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 845555143}
-        m_TargetAssemblyTypeName: QuestionsForParents5thGrade, Assembly-CSharp
-        m_MethodName: Answer6_1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -57284,6 +57300,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965378797}
   m_CullTransparentMesh: 1
+--- !u!114 &965378802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965378797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4aa5ccf2ec33a47a20183b6b737cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thisInputField: {fileID: 0}
+  _nameText: 
+  _fullText: 
 --- !u!1 &971861431
 GameObject:
   m_ObjectHideFlags: 0
@@ -87338,6 +87369,7 @@ GameObject:
   - component: {fileID: 1475812882}
   - component: {fileID: 1475812881}
   - component: {fileID: 1475812880}
+  - component: {fileID: 1475812883}
   m_Layer: 0
   m_Name: "\u0438\u0433\u0440\u0430\u0435\u0442 \u0432 \u0434\u0440\u0443\u0433\u0438\u0435
     \u0438\u0433\u0440\u044B"
@@ -87423,19 +87455,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 845555143}
-        m_TargetAssemblyTypeName: QuestionsForParents5thGrade, Assembly-CSharp
-        m_MethodName: Answer6_1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -87485,6 +87505,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475812878}
   m_CullTransparentMesh: 1
+--- !u!114 &1475812883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475812878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4aa5ccf2ec33a47a20183b6b737cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thisInputField: {fileID: 0}
+  _nameText: 
+  _fullText: 
 --- !u!1 &1478807518
 GameObject:
   m_ObjectHideFlags: 0
@@ -91833,6 +91868,7 @@ GameObject:
   - component: {fileID: 1541301050}
   - component: {fileID: 1541301049}
   - component: {fileID: 1541301048}
+  - component: {fileID: 1541301051}
   m_Layer: 0
   m_Name: "\u043B\u043E\u0436\u0438\u0442\u0441\u044F \u0441\u043F\u0430\u0442\u044C
     \u0432 "
@@ -91918,19 +91954,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 845555143}
-        m_TargetAssemblyTypeName: QuestionsForParents5thGrade, Assembly-CSharp
-        m_MethodName: Answer6_1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -91980,6 +92004,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1541301046}
   m_CullTransparentMesh: 1
+--- !u!114 &1541301051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541301046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4aa5ccf2ec33a47a20183b6b737cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thisInputField: {fileID: 0}
+  _nameText: 
+  _fullText: 
 --- !u!1 &1544062489
 GameObject:
   m_ObjectHideFlags: 0
@@ -96156,7 +96195,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0423\u0442\u0440\u043E\u043C \u0432\u0441\u0442\u0430\u0451\u0442 \u0432"
+  m_Text: "\u0423\u0442\u0440\u043E\u043C \u0432\u0441\u0442\u0430\u0451\u0442 \u0432
+    \n(\u0432\u0440\u0435\u043C\u044F \u0446\u0438\u0444\u0440\u0430\u043C\u0438)"
 --- !u!222 &1593403313
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -102432,8 +102472,9 @@ GameObject:
   - component: {fileID: 1692156294}
   - component: {fileID: 1692156293}
   - component: {fileID: 1692156292}
+  - component: {fileID: 1692156295}
   m_Layer: 0
-  m_Name: "\u0432 \u0448\u043A\u043E\u043B\u0443 \u0440\u0435\u0431\u0451\u043D\u043A\u0430
+  m_Name: "6.2 \u0432 \u0448\u043A\u043E\u043B\u0443 \u0440\u0435\u0431\u0451\u043D\u043A\u0430
     \u043E\u0442\u0432\u043E\u0434\u0438\u0442"
   m_TagString: Answer6
   m_Icon: {fileID: 0}
@@ -102517,19 +102558,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 845555143}
-        m_TargetAssemblyTypeName: QuestionsForParents5thGrade, Assembly-CSharp
-        m_MethodName: Answer6_1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -102579,6 +102608,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692156290}
   m_CullTransparentMesh: 1
+--- !u!114 &1692156295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692156290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4aa5ccf2ec33a47a20183b6b737cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thisInputField: {fileID: 0}
+  _nameText: 
+  _fullText: 
 --- !u!1 &1692721850
 GameObject:
   m_ObjectHideFlags: 0
@@ -107066,6 +107110,7 @@ GameObject:
   - component: {fileID: 1759815369}
   - component: {fileID: 1759815368}
   - component: {fileID: 1759815367}
+  - component: {fileID: 1759815370}
   m_Layer: 0
   m_Name: "\u0440\u0430\u0437 \u0432 \u043D\u0435\u0434\u0435\u043B\u044E \u0434\u0435\u043B\u0430\u0435\u0442
     \u0443\u0440\u043E\u043A\u0438 \u0434\u043E\u043C\u0430  \u0441  "
@@ -107151,19 +107196,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 845555143}
-        m_TargetAssemblyTypeName: QuestionsForParents5thGrade, Assembly-CSharp
-        m_MethodName: Answer6_1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -107213,6 +107246,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759815365}
   m_CullTransparentMesh: 1
+--- !u!114 &1759815370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759815365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4aa5ccf2ec33a47a20183b6b737cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thisInputField: {fileID: 0}
+  _nameText: 
+  _fullText: 
 --- !u!1 &1760055083
 GameObject:
   m_ObjectHideFlags: 0
@@ -123431,8 +123479,10 @@ GameObject:
   - component: {fileID: 2014963769}
   - component: {fileID: 2014963768}
   - component: {fileID: 2014963767}
+  - component: {fileID: 2014963770}
   m_Layer: 0
-  m_Name: "\u0432\u0441\u0442\u0430\u0451\u0442 \u0443\u0442\u0440\u043E\u043C \u0432 "
+  m_Name: "6.1 \u0432\u0441\u0442\u0430\u0451\u0442 \u0443\u0442\u0440\u043E\u043C
+    \u0432 "
   m_TagString: Answer6
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123515,19 +123565,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 845555143}
-        m_TargetAssemblyTypeName: QuestionsForParents5thGrade, Assembly-CSharp
-        m_MethodName: Answer6_1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -123577,6 +123615,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014963765}
   m_CullTransparentMesh: 1
+--- !u!114 &2014963770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014963765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4aa5ccf2ec33a47a20183b6b737cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thisInputField: {fileID: 0}
+  _nameText: 
+  _fullText: 
 --- !u!1 &2015766146
 GameObject:
   m_ObjectHideFlags: 0
@@ -127211,6 +127264,7 @@ GameObject:
   - component: {fileID: 2063958074}
   - component: {fileID: 2063958073}
   - component: {fileID: 2063958072}
+  - component: {fileID: 2063958075}
   m_Layer: 0
   m_Name: "\u0433\u0443\u043B\u044F\u0435\u0442 \u0441"
   m_TagString: Answer6
@@ -127295,19 +127349,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 845555143}
-        m_TargetAssemblyTypeName: QuestionsForParents5thGrade, Assembly-CSharp
-        m_MethodName: Answer6_1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -127357,6 +127399,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063958070}
   m_CullTransparentMesh: 1
+--- !u!114 &2063958075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063958070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4aa5ccf2ec33a47a20183b6b737cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thisInputField: {fileID: 0}
+  _nameText: 
+  _fullText: 
 --- !u!1 &2064232641
 GameObject:
   m_ObjectHideFlags: 0
