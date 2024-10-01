@@ -9903,6 +9903,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1755800009}
   - {fileID: 863001130}
   - {fileID: 1967544889}
   - {fileID: 1558240227}
@@ -9922,7 +9923,6 @@ RectTransform:
   - {fileID: 1035067375}
   - {fileID: 1680593087}
   - {fileID: 1680294261}
-  - {fileID: 1755800009}
   m_Father: {fileID: 1353732901}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -101933,10 +101933,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1680294262}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
+      - m_Target: {fileID: 845555141}
+        m_TargetAssemblyTypeName: CountingInformationPsychology, Assembly-CSharp
+        m_MethodName: Http
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -101945,10 +101945,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 845555141}
-        m_TargetAssemblyTypeName: CountingInformationPsychology, Assembly-CSharp
-        m_MethodName: Http
-        m_Mode: 1
+      - m_Target: {fileID: 1680294262}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
