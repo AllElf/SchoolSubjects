@@ -7,11 +7,14 @@ using UnityEngine.EventSystems;
 public class QuestionsForParents5thGrade : MonoBehaviour
 {
     [Header("Ответы")]
-    [SerializeField] string _answer4;
-    [SerializeField] string _answer5;
-    [SerializeField] string _answer15;
-    [SerializeField] string _answer16;
-    [SerializeField] string[] _answer6;
+    public string _answer4;
+    public string _answer5;
+    public string _answer15;
+    public string _answer16;
+    public string[] _answer6;
+    [Header("Все ответы в одном")]
+    [Multiline]
+    public string _fullAnswer;
     [Header("ReadingTheText скрипты")]
     ReadingTheText[] _readingTheText;
     [Header("Кнопки для 4 вопроса")]
@@ -20,19 +23,48 @@ public class QuestionsForParents5thGrade : MonoBehaviour
     [SerializeField] InputField inputField4;
     [SerializeField] InputField inputField15;
     [SerializeField] InputField inputField16;
-    [Header("RaycastUI скрипт")]
-    [SerializeField] RaycastUI raycastUI;
-    private void Start()
+    [Header("Поиск основного скрипта")]
+    [SerializeField]CountingInformationPsychology _countingInformationPsychology;
+    public bool _enabled;
+    //[Header("RaycastUI скрипт")]
+    //[SerializeField] RaycastUI raycastUI;
+
+    private void Awake()
     {
+        _enabled = false;
         _answer6 = new string[GameObject.FindGameObjectsWithTag("Answer6").Length];
         _readingTheText = GameObject.FindObjectsOfType<ReadingTheText>();
+    }
+    private void Start()
+    {
+        
+        
     }
     private void FixedUpdate()
     {
         InputField4Editing();
         Answer6_1();
+        FullAnswer();
     }
-    
+    public void EnabledPanel()
+    {
+        _enabled = true;
+    }
+    public void FullAnswer()
+    {
+        if(_enabled == true)
+        {
+            _fullAnswer = "Ответы за 4 вопрос: \n" + _answer4 + "\n" + "Ответы за 5 вопрос: \n" + _answer5 + "\n" + "Ответы за 6 вопрос \n: "
+            + _answer6[0] + "\n" + _answer6[1] + "\n" + _answer6[2] + "\n" + _answer6[3] + "\n" + _answer6[4] + "\n" + _answer6[5]
+            + "\n" + _answer6[6] + "\n" + _answer6[7] + "\n" + _answer6[8] + "\n" + _answer6[9] + "\n" + _answer6[10] + "\n" + _answer6[11]
+            + "\n" + _answer6[12] + "\n" + "Ответы за 15 вопрос \n: " + _answer15 + "\n" + "Ответы за 16 вопрос \n: " + _answer16 + "\n";
+        }
+        else if (_enabled == false)
+        {
+            _fullAnswer = "Пусто";
+      
+        }
+    }
     public void InputField4Click()
     {
        string text = "4.1 - " + inputField4.text;
@@ -217,11 +249,11 @@ public class QuestionsForParents5thGrade : MonoBehaviour
     }
     public void Answer5_1()
     {
-        _answer5 = "да";
+        _answer5 = "5.1 да";
     }
     public void Answer5_2()
     {
-        _answer5 = "нет";
+        _answer5 = "5.2 нет";
     }
     public void Answer6_1()
     {
@@ -233,10 +265,10 @@ public class QuestionsForParents5thGrade : MonoBehaviour
     
     public void Answer15()
     {
-        _answer15 = inputField15.text;
+        _answer15 = "15. " + inputField15.text;
     }
     public void Answer16()
     {
-        _answer16 = inputField16.text;
+        _answer16 = "16. " + inputField16.text;
     }
 }

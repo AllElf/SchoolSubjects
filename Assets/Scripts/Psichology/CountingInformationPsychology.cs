@@ -12,6 +12,8 @@ public class CountingInformationPsychology : MonoBehaviour
     [Header("Панели для активации")]
     [SerializeField] GameObject[] _allObjects;
     [SerializeField] GameObject[] _results; // Текстовые поля с результатами;
+    [Header("Ссылка на скрипт теста для родителей 5х классов")]
+    [SerializeField] QuestionsForParents5thGrade _questionsForParents5thGrade;
     [Header("ФИО")]
     [SerializeField] string _name; // Фамилия и имя
     [Header("ФИО реьёнка")]
@@ -23,6 +25,8 @@ public class CountingInformationPsychology : MonoBehaviour
     [Header("Предмет")]
     [SerializeField] string _subject; // Предмет и подпредмет
     [Header("Текстовый ответ")]
+    [Multiline]
+    public string _answer5ClaccParrents;
     [SerializeField] string _answer; // Ответ
     [Header("Общая информация")]
     [Multiline][SerializeField] string _allInformation; // Общая информация
@@ -37,6 +41,7 @@ public class CountingInformationPsychology : MonoBehaviour
     [SerializeField] string _url;
     bool succesful = true;
 
+    
     [Obsolete]
     public void Http()
     {
@@ -337,6 +342,7 @@ public class CountingInformationPsychology : MonoBehaviour
     }
     private void Start()
     {
+        
         _childrenActivization = false;
         _answerText = false;
         _nameText = GameObject.FindGameObjectWithTag("Name").GetComponent<InputField>();
@@ -372,6 +378,7 @@ public class CountingInformationPsychology : MonoBehaviour
     {
         _name = _nameText.text;
         _nameChildren = _nameTextChildren.text;
+        
         AnswerText();
         if (_childrenActivization == false)
         {
@@ -380,7 +387,7 @@ public class CountingInformationPsychology : MonoBehaviour
         }
         else if (_childrenActivization == true)
         {
-            _allInformation = $"Предмет: психология\n\nФИО: {_name}\nФИО ребёнка: {_nameChildren}\nКласс: {_class}\nПодкатегория предмета: {_subject}\nТекстовый ответ: {_answer}\nБаллы: {_scores.ToString()}\nДата выполнения: ";
+            _allInformation = $"Предмет: психология\n\nФИО: {_name}\nФИО ребёнка: {_nameChildren}\nКласс: {_class}\nПодкатегория предмета: {_subject}\nТекстовый ответ:\n {_questionsForParents5thGrade._fullAnswer}\nБаллы: {_scores.ToString()}\nДата выполнения: ";
 
         }
         Result();

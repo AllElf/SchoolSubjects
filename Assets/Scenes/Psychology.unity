@@ -1764,7 +1764,7 @@ GameObject:
   - component: {fileID: 35762945}
   - component: {fileID: 35762948}
   m_Layer: 0
-  m_Name: "\u043F\u043E\u0441\u0435\u0449\u0430\u0435\u0442 \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435
+  m_Name: "6.4 \u043F\u043E\u0441\u0435\u0449\u0430\u0435\u0442 \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435
     \u0437\u0430\u043D\u044F\u0442\u0438\u044F, \u043A\u0440\u0443\u0436\u043A\u0438,
     \u0441\u0435\u043A\u0446\u0438\u0438 "
   m_TagString: Answer6
@@ -4962,7 +4962,7 @@ GameObject:
   - component: {fileID: 102967292}
   - component: {fileID: 102967295}
   m_Layer: 0
-  m_Name: "\u0441\u043C\u043E\u0442\u0440\u0438\u0442 \u0442\u0435\u043B\u0435\u0432\u0438\u0437\u043E\u0440"
+  m_Name: "6.9 \u0441\u043C\u043E\u0442\u0440\u0438\u0442 \u0442\u0435\u043B\u0435\u0432\u0438\u0437\u043E\u0440"
   m_TagString: Answer6
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6762,7 +6762,7 @@ GameObject:
   - component: {fileID: 132354696}
   - component: {fileID: 132354699}
   m_Layer: 0
-  m_Name: "\xAB\u0431\u0440\u043E\u0434\u0438\u0442\xBB \u0432 \u0438\u043D\u0442\u0435\u0440\u043D\u0435\u0442\u0435"
+  m_Name: "6.10 \xAB\u0431\u0440\u043E\u0434\u0438\u0442\xBB \u0432 \u0438\u043D\u0442\u0435\u0440\u043D\u0435\u0442\u0435"
   m_TagString: Answer6
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9846,7 +9846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 6286.793}
+  m_AnchoredPosition: {x: -40, y: 89.459076}
   m_SizeDelta: {x: 0, y: 14023.314}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &181831410
@@ -27542,7 +27542,7 @@ GameObject:
   - component: {fileID: 502837113}
   - component: {fileID: 502837116}
   m_Layer: 0
-  m_Name: "\u0438\u0433\u0440\u0430\u0435\u0442 \u0432 \u043A\u043E\u043C\u043F\u044C\u044E\u0442\u0435\u0440\u043D\u044B\u0435
+  m_Name: "6.7 \u0438\u0433\u0440\u0430\u0435\u0442 \u0432 \u043A\u043E\u043C\u043F\u044C\u044E\u0442\u0435\u0440\u043D\u044B\u0435
     \u0438\u0433\u0440\u044B"
   m_TagString: Answer6
   m_Icon: {fileID: 0}
@@ -29232,7 +29232,7 @@ GameObject:
   - component: {fileID: 524420520}
   - component: {fileID: 524420523}
   m_Layer: 0
-  m_Name: "\u0440\u0435\u0431\u0451\u043D\u043E\u043A \u0438\u043C\u0435\u0435\u0442
+  m_Name: "6.12 \u0440\u0435\u0431\u0451\u043D\u043E\u043A \u0438\u043C\u0435\u0435\u0442
     \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u0443\u044E \u043A\u043E\u043C\u043D\u0430\u0442\u0443"
   m_TagString: Answer6
   m_Icon: {fileID: 0}
@@ -32479,7 +32479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &596058669
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37319,7 +37319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &673067916
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41720,7 +41720,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &746698618
 RectTransform:
   m_ObjectHideFlags: 0
@@ -49114,7 +49114,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845555140}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb92df5721200c741bd30287476ec922, type: 3}
   m_Name: 
@@ -49128,11 +49128,13 @@ MonoBehaviour:
   - {fileID: 673067915}
   - {fileID: 1712881146}
   _results: []
+  _questionsForParents5thGrade: {fileID: 845555143}
   _name: 
   _nameChildren: 
   _class: 
   _classCategory: 
   _subject: 
+  _answer5ClaccParrents: 
   _answer: 
   _allInformation: 
   _childrenActivization: 0
@@ -49171,6 +49173,7 @@ MonoBehaviour:
   _answer15: 
   _answer16: 
   _answer6: []
+  _fullAnswer: 
   buttons4:
   - {fileID: 1568485416}
   - {fileID: 89537775}
@@ -49190,7 +49193,8 @@ MonoBehaviour:
   inputField4: {fileID: 1878138684}
   inputField15: {fileID: 1251782635}
   inputField16: {fileID: 2098652877}
-  raycastUI: {fileID: 845555144}
+  _countingInformationPsychology: {fileID: 845555141}
+  _enabled: 0
 --- !u!114 &845555144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49198,7 +49202,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845555140}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a690ff03ce199d47a0302bed80e68cb, type: 3}
   m_Name: 
@@ -51254,7 +51258,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1363472274}
   m_HandleRect: {fileID: 1363472273}
   m_Direction: 2
-  m_Value: 0.5217362
+  m_Value: 0.99319446
   m_Size: 0.06263013
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -57165,7 +57169,7 @@ GameObject:
   - component: {fileID: 965378799}
   - component: {fileID: 965378802}
   m_Layer: 0
-  m_Name: "\u0438\u043C\u0435\u0435\u0442 \u0441\u0432\u043E\u0451 \u043C\u0435\u0441\u0442\u043E
+  m_Name: "6.13 \u0438\u043C\u0435\u0435\u0442 \u0441\u0432\u043E\u0451 \u043C\u0435\u0441\u0442\u043E
     \u0434\u043B\u044F \u0440\u0430\u0431\u043E\u0442\u044B \u0438 \u0438\u0433\u0440
     \u0432 \u043E\u0431\u0449\u0435\u0439 \u043A\u043E\u043C\u043D\u0430\u0442\u0435"
   m_TagString: Answer6
@@ -60867,7 +60871,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1035201286
 RectTransform:
   m_ObjectHideFlags: 0
@@ -67532,7 +67536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1139137797
 RectTransform:
   m_ObjectHideFlags: 0
@@ -74249,7 +74253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1240303023
 RectTransform:
   m_ObjectHideFlags: 0
@@ -79060,7 +79064,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1333621250
 RectTransform:
   m_ObjectHideFlags: 0
@@ -87371,7 +87375,7 @@ GameObject:
   - component: {fileID: 1475812880}
   - component: {fileID: 1475812883}
   m_Layer: 0
-  m_Name: "\u0438\u0433\u0440\u0430\u0435\u0442 \u0432 \u0434\u0440\u0443\u0433\u0438\u0435
+  m_Name: "6.8 \u0438\u0433\u0440\u0430\u0435\u0442 \u0432 \u0434\u0440\u0443\u0433\u0438\u0435
     \u0438\u0433\u0440\u044B"
   m_TagString: Answer6
   m_Icon: {fileID: 0}
@@ -91870,7 +91874,7 @@ GameObject:
   - component: {fileID: 1541301048}
   - component: {fileID: 1541301051}
   m_Layer: 0
-  m_Name: "\u043B\u043E\u0436\u0438\u0442\u0441\u044F \u0441\u043F\u0430\u0442\u044C
+  m_Name: "6.11 \u043B\u043E\u0436\u0438\u0442\u0441\u044F \u0441\u043F\u0430\u0442\u044C
     \u0432 "
   m_TagString: Answer6
   m_Icon: {fileID: 0}
@@ -103944,7 +103948,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1712881147
 RectTransform:
   m_ObjectHideFlags: 0
@@ -107112,7 +107116,7 @@ GameObject:
   - component: {fileID: 1759815367}
   - component: {fileID: 1759815370}
   m_Layer: 0
-  m_Name: "\u0440\u0430\u0437 \u0432 \u043D\u0435\u0434\u0435\u043B\u044E \u0434\u0435\u043B\u0430\u0435\u0442
+  m_Name: "6.5 \u0440\u0430\u0437 \u0432 \u043D\u0435\u0434\u0435\u043B\u044E \u0434\u0435\u043B\u0430\u0435\u0442
     \u0443\u0440\u043E\u043A\u0438 \u0434\u043E\u043C\u0430  \u0441  "
   m_TagString: Answer6
   m_Icon: {fileID: 0}
@@ -118261,7 +118265,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 845555143}
+        m_TargetAssemblyTypeName: QuestionsForParents5thGrade, Assembly-CSharp
+        m_MethodName: EnabledPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -127266,7 +127282,7 @@ GameObject:
   - component: {fileID: 2063958072}
   - component: {fileID: 2063958075}
   m_Layer: 0
-  m_Name: "\u0433\u0443\u043B\u044F\u0435\u0442 \u0441"
+  m_Name: "6.6 \u0433\u0443\u043B\u044F\u0435\u0442 \u0441"
   m_TagString: Answer6
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
