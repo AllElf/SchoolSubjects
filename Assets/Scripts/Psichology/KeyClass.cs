@@ -8,16 +8,16 @@ public class KeyClass : MonoBehaviour
 {
     [Header("Коды класса для 5 классов")]
     [SerializeField] string _class_5A = "Code5AClass1";
-    [SerializeField] string _class_5B = "Code5AClass2";
-    [SerializeField] string _class_5V = "Code5AClass3";
-    [SerializeField] string _class_5G = "Code5AClass4";
-    [SerializeField] string _class_5D = "Code5AClass5";
+    [SerializeField] string _class_5B = "Code5BClass2";
+    [SerializeField] string _class_5V = "Code5VClass3";
+    [SerializeField] string _class_5G = "Code5GClass4";
+    [SerializeField] string _class_5D = "Code5DClass5";
     [Header("Коды класса для 9 классов")]
     [SerializeField] string _class_9A = "Code9AClass1";
-    [SerializeField] string _class_9B = "Code9AClass2";
-    [SerializeField] string _class_9V = "Code9AClass3";
-    [SerializeField] string _class_9G = "Code9AClass4";
-    [SerializeField] string _class_9D = "Code9AClass5";
+    [SerializeField] string _class_9B = "Code9BClass2";
+    [SerializeField] string _class_9V = "Code9VClass3";
+    [SerializeField] string _class_9G = "Code9GClass4";
+    [SerializeField] string _class_9D = "Code9DClass5";
     [Header("InputField для кода класса")]
     [SerializeField] InputField _kode;
     [Header("Панель для кода класса")]
