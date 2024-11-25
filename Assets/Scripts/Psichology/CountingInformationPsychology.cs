@@ -27,7 +27,7 @@ public class CountingInformationPsychology : MonoBehaviour
     [Header("Текстовый ответ")]
     [Multiline]
     public string _answer5ClaccParrents;
-    [SerializeField] string _answer; // Ответ
+    public string _answer; // Ответ
     [Header("Общая информация")]
     [Multiline][SerializeField] string _allInformation; // Общая информация
     [Header("Родитель/Ученик")]
@@ -35,7 +35,7 @@ public class CountingInformationPsychology : MonoBehaviour
     [Header("Имеется текстовый ответ")]
     [SerializeField] bool _answerText;
     [Header("Баллы")]
-    [SerializeField] int _scores = 0; // Баллы
+    public int _scores = 0; // Баллы
 
     [Header("Сылка для класса и направления")]
     [SerializeField] string _url;
@@ -382,12 +382,12 @@ public class CountingInformationPsychology : MonoBehaviour
         AnswerText();
         if (_childrenActivization == false)
         {
-            _allInformation = $"Предмет: Психология\n\nФИО: {_name}\nКласс: {_class}\nПодкатегория предмета: {_subject}\nТекстовый ответ: {_answer}\nБаллы: {_scores.ToString()}\nДата выполнения: ";
+            _allInformation = $"Предмет: Психология\nФИО: {_name}\nКласс: {_class}\nПодкатегория предмета: {_subject}\nТекстовый ответ:\n{_answer}Баллы: {_scores.ToString()}\nДата выполнения: ";
 
         }
         else if (_childrenActivization == true)
         {
-            _allInformation = $"Предмет: психология\n\nФИО: {_name}\nФИО ребёнка: {_nameChildren}\nКласс: {_class}\nПодкатегория предмета: {_subject}\nТекстовый ответ:\n {_questionsForParents5thGrade._fullAnswer}\nБаллы: {_scores.ToString()}\nДата выполнения: ";
+            _allInformation = $"Предмет: психология\nФИО: {_name}\nФИО ребёнка: {_nameChildren}\nКласс: {_class}\nПодкатегория предмета: {_subject}\nТекстовый ответ:\n {_questionsForParents5thGrade._fullAnswer}\nБаллы: {_scores.ToString()}\nДата выполнения: ";
 
         }
         Result();
