@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Geography.unity
     guid: 83336e7aa368d6a41ab5696d4f9dd116
   - enabled: 1
+    path: Assets/Scenes/GeographyWorldMap.unity
+    guid: 93e5abfaf2de3d54eb01bf061789c17e
+  - enabled: 1
     path: Assets/Scenes/Math.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
