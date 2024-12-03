@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/English/Scenes/Seasons.unity
     guid: 334d5637e5fdf2d4cb5d9d4b4d3d2e32
   - enabled: 1
+    path: Assets/Scenes/SceneSelectionGeographi.unity
+    guid: 6e024301ffccce44884d7b40cafe626a
+  - enabled: 1
     path: Assets/Scenes/Geography.unity
     guid: 83336e7aa368d6a41ab5696d4f9dd116
   - enabled: 1
