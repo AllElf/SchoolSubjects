@@ -382,7 +382,7 @@ public class CountingInformationPsychology : MonoBehaviour
         AnswerText();
         if (_childrenActivization == false)
         {
-            _allInformation = $"Предмет: Психология\nФИО: {_name}\nКласс: {_class}\nПодкатегория предмета: {_subject}\nТекстовый ответ:\n{_answer}Баллы: {_scores.ToString()}\nДата выполнения: ";
+            _allInformation = $"Предмет: Психология\nФИО: {_name}\nКласс: {_class}\nПодкатегория предмета: {_subject}\nТекстовый ответ:\n{_answer}\nБаллы: {_scores.ToString()}\nДата выполнения: ";
 
         }
         else if (_childrenActivization == true)
