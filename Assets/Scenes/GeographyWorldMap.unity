@@ -308,7 +308,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -8.5, y: 5.5458374}
+  m_AnchoredPosition: {x: -8.5, y: 5.5455933}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &154365490
@@ -1602,6 +1602,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314176024}
   m_CullTransparentMesh: 1
+--- !u!1 &1399570406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1399570408}
+  - component: {fileID: 1399570407}
+  m_Layer: 0
+  m_Name: BackScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1399570407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399570406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06017043f31055e488e76e40c89f93cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: SceneSelectionGeographi
+--- !u!4 &1399570408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399570406}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.59981, y: 10.607308, z: -9.897807}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1450031214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,8 +2013,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1314176026}
   m_HandleRect: {fileID: 1314176025}
   m_Direction: 2
-  m_Value: 1.000062
-  m_Size: 0.9944731
+  m_Value: 1.0000826
+  m_Size: 0.9944608
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2475,3 +2520,4 @@ SceneRoots:
   - {fileID: 1077071358}
   - {fileID: 1696790727}
   - {fileID: 11936269}
+  - {fileID: 1399570408}

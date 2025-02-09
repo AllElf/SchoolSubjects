@@ -32,6 +32,7 @@ public class MathGame : MonoBehaviour
         _enable = false;
         // Установить обработчики событий для элементов UI
         submitButton.onClick.AddListener(CheckAnswer); // Добавляем обработчик для кнопки отправки ответа
+        answerInput.onSubmit.AddListener(delegate { CheckAnswer(); }); // Добавляем обработчик для поля ввода
         difficultyDropdown.onValueChanged.AddListener(delegate { UpdateDifficulty(); }); // Добавляем обработчик для изменения уровня сложности
         problemTypeDropdown.onValueChanged.AddListener(delegate { UpdateProblemType(); }); // Добавляем обработчик для изменения типа задачи
 
@@ -43,6 +44,7 @@ public class MathGame : MonoBehaviour
    
     void FixedUpdate()
     {
+        answerInput.ActivateInputField();
         _scoreText.text = _scores.ToString();
         if (_timer != null && !_enable && _timer._image.fillAmount <= 0f)
         {

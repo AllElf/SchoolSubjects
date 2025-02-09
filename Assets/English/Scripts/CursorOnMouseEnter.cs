@@ -26,5 +26,6 @@ public class CursorOnMouseEnter : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    
 
 }

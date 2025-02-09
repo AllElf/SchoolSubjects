@@ -1,5 +1,6 @@
 using System.Linq; // Для работы с LINQ
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 // Основной контроллер игры, управляющий уровнями
@@ -102,23 +103,42 @@ public class GameController : MonoBehaviour
     // Метод проверки ответа
     private void FixedUpdate()
     {
+        codeInput.ActivateInputField();
+        
+        #region keyWord
+        //if (codeInput.isFocused && Input.GetKeyDown(KeyCode.Return))
+        //{
+        //    if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
+        //    {
+        //        // Можно добавить обработку отправки текста
+        //        Debug.Log("Текст отправлен: " + codeInput.text);
+        //        EventSystem.current.SetSelectedGameObject(null); // Сброс фокуса
+        //    }
+        //    else
+        //    {
+        //        codeInput.text += "\n"; // Добавление новой строки
+        //        codeInput.caretPosition = codeInput.text.Length; // Перемещение курсора
+        //    }
+        //}
+        #endregion
         scoresText.text = "Баллы: " + scores.ToString();
         if (_timer != null && _timer._image.fillAmount <= 0 && !_hasExecuted)
         {
             _hasExecuted = true; // Устанавливаем флаг, чтобы предотвратить повторное выполнение
 
             _done = true;
-            
+
 
             if (_done)
             {
                 _done = false;
                 CheckAnswer();
-                
+
                 _timer._image.fillAmount = 1f; // Исправлено имя свойства fillAmount
             }
         }
     }
+
     public void CheckAnswer()
     {
         // Получение введенного игроком кода
@@ -147,7 +167,7 @@ public class GameController : MonoBehaviour
             {
                 feedbackText.text = "Время вышло полностью!";
                 Destroy(_timer);
-            }  
+            }
         }
         else
         {

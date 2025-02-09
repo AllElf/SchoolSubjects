@@ -41,6 +41,15 @@ public class WordAnimals : MonoBehaviour
         //submitButton.onClick.AddListener(CheckAnswer);
     }
 
+    private void Update()
+    {
+        inputField.ActivateInputField();
+        if (Input.GetKeyUp(KeyCode.Return))
+        {
+            CheckAnswer();
+            GenerateWord();
+        }
+    }
     void InitializeWords()
     {
         wordsLevel1 = new List<KeyValuePair<string, string>>

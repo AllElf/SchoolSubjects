@@ -12,4 +12,5 @@ public class ButtomScene : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
 }

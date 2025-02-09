@@ -40,8 +40,16 @@ public class WordGame : MonoBehaviour
         StartCoroutine(Clock());
         //submitButton.onClick.AddListener(CheckAnswer);
     }
-
-   void InitializeWords()
+    private void Update()
+    {
+        inputField.ActivateInputField();
+        if (Input.GetKeyUp(KeyCode.Return))
+        {
+            CheckAnswer();
+            GenerateWord();
+        }
+    }
+    void InitializeWords()
 {
     wordsLevel1 = new List<KeyValuePair<string, string>>
     {
