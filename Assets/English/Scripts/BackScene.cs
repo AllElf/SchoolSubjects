@@ -6,7 +6,7 @@ public class BackScene : MonoBehaviour
     [SerializeField] string sceneName;
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Backspace))
+        if(Input.GetKeyUp(KeyCode.Backspace))
         {
             SceneManager.LoadScene(sceneName);
         }

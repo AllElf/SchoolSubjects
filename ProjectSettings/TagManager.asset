@@ -18,6 +18,21 @@ TagManager:
   - Choleric
   - Sanguine
   - Phlegmatic
+  - Physics
+  - Mathematics
+  - ElectricalEngineering
+  - Technology
+  - Chemistry
+  - Biology
+  - Medicine
+  - Geography
+  - History
+  - Journalism
+  - Art
+  - Pedagogy
+  - ServiceIndustry
+  - MilitaryAffairs
+  - Sports
   layers:
   - Default
   - TransparentFX
