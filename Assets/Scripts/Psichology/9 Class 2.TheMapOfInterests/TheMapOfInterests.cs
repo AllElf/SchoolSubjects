@@ -6,6 +6,8 @@ using System.Collections.Generic;
 
 public class TheMapOfInterests : MonoBehaviour
 {
+    [Header("Главный скрипт")]
+    [SerializeField] CountingInformationPsychology _countingInformationPsychology;
     [Header("Категории")]
     [SerializeField] int _physics = 0;
     [SerializeField] int _mathematics = 0;
@@ -39,6 +41,7 @@ public class TheMapOfInterests : MonoBehaviour
     [SerializeField] Text _topCategoriesText;
     private void Start()
     {
+        _countingInformationPsychology = GameObject.FindFirstObjectByType<CountingInformationPsychology>();
         _topCategoriesText = GameObject.Find("Text (TopCategoriesText)").GetComponent<Text>();
     }
 
@@ -53,12 +56,13 @@ public class TheMapOfInterests : MonoBehaviour
         if (_pointEvent && Input.GetMouseButtonUp(0))
         {
             selectedObject = EventSystem.current.currentSelectedGameObject;
-            if(selectedObject.transform.parent != null)
-            {
-                parent = selectedObject.transform.parent;
-            }
+            
             if (selectedObject != null)
             {
+                if (selectedObject.transform.parent != null)
+                {
+                    parent = selectedObject.transform.parent;
+                }
                 _name = $"Название объекта:{selectedObject.name}\nТег объекта: {selectedObject.tag}";
                 Assignment();
             }
@@ -348,6 +352,8 @@ public class TheMapOfInterests : MonoBehaviour
         {
             _topCategories += $"{category.Key}: {category.Value} балла\n";
             _topCategoriesText.text = _topCategories;
+            _countingInformationPsychology._answer = _topCategories;
+            _countingInformationPsychology._scores += category.Value;
             Debug.Log($"{category.Key}: {category.Value} балла");
         }
     }
