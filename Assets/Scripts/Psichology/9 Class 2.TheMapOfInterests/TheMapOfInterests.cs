@@ -32,9 +32,9 @@ public class TheMapOfInterests : MonoBehaviour
     [SerializeField] GameObject selectedObject;
     [SerializeField] Transform parent;
 
-    [Header("EventSystem")]
-    public GraphicRaycaster raycaster;
-    public EventSystem eventSystem;
+    //[Header("EventSystem")]
+    //public GraphicRaycaster raycaster;
+    //public EventSystem eventSystem;
 
     [Header("Категории победителей")]
     [SerializeField][Multiline] string _topCategories;
