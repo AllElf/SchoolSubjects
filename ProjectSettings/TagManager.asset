@@ -33,6 +33,8 @@ TagManager:
   - ServiceIndustry
   - MilitaryAffairs
   - Sports
+  - CommunicativeInclinations
+  - OrganizationalInclinations
   layers:
   - Default
   - TransparentFX

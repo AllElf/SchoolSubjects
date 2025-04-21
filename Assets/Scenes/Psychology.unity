@@ -1881,7 +1881,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -81, y: -257}
-  m_SizeDelta: {x: 1290.924, y: 39.999996}
+  m_SizeDelta: {x: 1290.924, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &24930656
 MonoBehaviour:
@@ -3340,7 +3340,7 @@ GameObject:
   - component: {fileID: 38211956}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3425,6 +3425,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3768,7 +3780,7 @@ GameObject:
   - component: {fileID: 41005820}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3853,6 +3865,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4743,7 +4767,7 @@ GameObject:
   - component: {fileID: 52128040}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4970,7 +4994,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &54213268
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4983,12 +5007,15 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1189853719}
   - {fileID: 122970335}
+  - {fileID: 1837069642}
+  - {fileID: 1286912596}
   m_Father: {fileID: 1621219058}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 38}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &54213269
@@ -5513,7 +5540,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 714107390}
-  - {fileID: 540887249}
   - {fileID: 1621372470}
   m_Father: {fileID: 686234083}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5529,7 +5555,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65737188}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
   m_Name: 
@@ -5543,7 +5569,7 @@ MonoBehaviour:
   m_DecelerationRate: 0.135
   m_ScrollSensitivity: 45
   m_Viewport: {fileID: 714107390}
-  m_HorizontalScrollbar: {fileID: 540887250}
+  m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 1621372471}
   m_HorizontalScrollbarVisibility: 2
   m_VerticalScrollbarVisibility: 2
@@ -7830,7 +7856,7 @@ GameObject:
   - component: {fileID: 98492488}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7923,6 +7949,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &98492489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7975,7 +8013,7 @@ GameObject:
   - component: {fileID: 100912684}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8060,6 +8098,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8579,7 +8629,7 @@ GameObject:
   - component: {fileID: 104555956}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8664,6 +8714,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9457,7 +9519,7 @@ GameObject:
   - component: {fileID: 122970337}
   - component: {fileID: 122970336}
   m_Layer: 0
-  m_Name: Text (Legacy)
+  m_Name: Text (Answer)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9479,8 +9541,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35, y: 1797}
-  m_SizeDelta: {x: 1946.708, y: 887.365}
+  m_AnchoredPosition: {x: 34.999985, y: -1476.0658}
+  m_SizeDelta: {x: 1946.7, y: 1103.987}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &122970336
 MonoBehaviour:
@@ -9504,18 +9566,22 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
+    m_FontSize: 50
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 121
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: "\u041A\u043E\u043C\u043C\u0443\u043D\u0438\u043A\u0430\u0442\u0438\u0432\u043D\u044B\u0435 
+    \u0441\u043A\u043B\u043E\u043D\u043D\u043E\u0441\u0442\u0438: \u041E\u0447\u0435\u043D\u044C
+    \u043D\u0438\u0437\u043A\u0438\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C\n\u041E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0442\u043E\u0440\u0441\u043A\u0438\u0435
+    \u0441\u043A\u043B\u043E\u043D\u043D\u043E\u0441\u0442\u0438:\u041E\u0447\u0435\u043D\u044C
+    \u043D\u0438\u0437\u043A\u0438\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C"
 --- !u!222 &122970337
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11016,7 +11082,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1070, y: 2006}
+  m_AnchoredPosition: {x: 1070.0001, y: 2006}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &136884822
@@ -11397,7 +11463,7 @@ GameObject:
   - component: {fileID: 138963757}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12603,7 +12669,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 626083766}
   m_Direction: 2
   m_Value: 0.9997203
-  m_Size: 0.071095936
+  m_Size: 0.07109595
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -13940,7 +14006,7 @@ GameObject:
   - component: {fileID: 173491997}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14105,7 +14171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 879, y: 1903}
+  m_AnchoredPosition: {x: 879.0001, y: 1903}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &174068568
@@ -14486,7 +14552,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000026703, y: 16447.848}
+  m_AnchoredPosition: {x: 0.000026703, y: 16447.844}
   m_SizeDelta: {x: 0, y: 17326.125}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &182545652
@@ -18581,7 +18647,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 862, y: -1329}
+  m_AnchoredPosition: {x: 862.0001, y: -1329}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &231401814
@@ -18598,7 +18664,7 @@ GameObject:
   - component: {fileID: 231401816}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18683,6 +18749,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -19169,7 +19247,7 @@ GameObject:
   - component: {fileID: 237366314}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19254,6 +19332,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -19708,7 +19798,7 @@ GameObject:
   - component: {fileID: 240698480}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23976,7 +24066,7 @@ GameObject:
   - component: {fileID: 281516139}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24061,6 +24151,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -25982,7 +26084,7 @@ GameObject:
   - component: {fileID: 313878273}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26067,6 +26169,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -28923,7 +29037,7 @@ GameObject:
   - component: {fileID: 348067254}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29008,6 +29122,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -30511,7 +30637,7 @@ GameObject:
   - component: {fileID: 363359936}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31016,7 +31142,7 @@ GameObject:
   - component: {fileID: 366995360}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31230,7 +31356,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1049018477}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.06648196
+  m_Size: 0.06648197
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -33233,7 +33359,7 @@ GameObject:
   - component: {fileID: 401396267}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33318,6 +33444,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -35478,7 +35616,7 @@ GameObject:
   - component: {fileID: 425308187}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35563,6 +35701,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -39453,7 +39603,7 @@ GameObject:
   - component: {fileID: 483435981}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40763,7 +40913,7 @@ GameObject:
   - component: {fileID: 495602611}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41261,7 +41411,7 @@ GameObject:
   - component: {fileID: 501151826}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42684,7 +42834,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &513729691
 RectTransform:
   m_ObjectHideFlags: 0
@@ -43989,7 +44139,7 @@ GameObject:
   - component: {fileID: 531065881}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44074,6 +44224,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -45295,132 +45457,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540231543}
   m_CullTransparentMesh: 1
---- !u!1 &540887248
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 540887249}
-  - component: {fileID: 540887252}
-  - component: {fileID: 540887251}
-  - component: {fileID: 540887250}
-  m_Layer: 0
-  m_Name: Scrollbar Horizontal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &540887249
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540887248}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1430718503}
-  m_Father: {fileID: 65737189}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 20}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &540887250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540887248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a4db7a114972834c8e4117be1d82ba3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1260713332}
-  m_HandleRect: {fileID: 1260713331}
-  m_Direction: 0
-  m_Value: 0.0000071219997
-  m_Size: 0.9955168
-  m_NumberOfSteps: 0
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &540887251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540887248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &540887252
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540887248}
-  m_CullTransparentMesh: 1
 --- !u!1 &541963624
 GameObject:
   m_ObjectHideFlags: 0
@@ -45514,7 +45550,7 @@ GameObject:
   - component: {fileID: 542368102}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45599,6 +45635,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -47464,7 +47512,7 @@ GameObject:
   - component: {fileID: 566040186}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47549,6 +47597,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -48273,7 +48333,7 @@ GameObject:
   - component: {fileID: 579767118}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49810,7 +49870,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1003, y: 312}
+  m_AnchoredPosition: {x: 1003.0001, y: 312}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &592071790
@@ -50400,7 +50460,7 @@ GameObject:
   - component: {fileID: 599041154}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56280,7 +56340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &673067916
 RectTransform:
   m_ObjectHideFlags: 0
@@ -58221,7 +58281,7 @@ GameObject:
   - component: {fileID: 700924103}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59377,9 +59437,9 @@ RectTransform:
   m_Father: {fileID: 65737189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -17, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &714107391
 MonoBehaviour:
@@ -61170,7 +61230,7 @@ GameObject:
   - component: {fileID: 738159243}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61255,6 +61315,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -64367,7 +64439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &766921962
 RectTransform:
   m_ObjectHideFlags: 0
@@ -64867,7 +64939,7 @@ GameObject:
   - component: {fileID: 776740275}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64952,6 +65024,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -65408,7 +65492,7 @@ GameObject:
   - component: {fileID: 780040364}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70850,7 +70934,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 942, y: -1704}
+  m_AnchoredPosition: {x: 942.0001, y: -1704}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &832263260
@@ -71153,7 +71237,7 @@ GameObject:
   - component: {fileID: 836869538}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71998,6 +72082,7 @@ GameObject:
   - component: {fileID: 845555144}
   - component: {fileID: 845555146}
   - component: {fileID: 845555147}
+  - component: {fileID: 845555148}
   m_Layer: 0
   m_Name: ScriptManager
   m_TagString: Untagged
@@ -72332,6 +72417,24 @@ MonoBehaviour:
   maxValue: 0
   _textResultType: {fileID: 0}
   _countingInformationPsychology: {fileID: 0}
+--- !u!114 &845555148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845555140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e487a88cd82441a4aa15a09550fd4f19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _countingInformationPsychology: {fileID: 845555141}
+  _communicative: 0
+  _organizational: 0
+  _scores: 0
+  result: 
+  skillText: {fileID: 122970336}
 --- !u!1 &847382070
 GameObject:
   m_ObjectHideFlags: 0
@@ -75425,8 +75528,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1363472274}
   m_HandleRect: {fileID: 1363472273}
   m_Direction: 2
-  m_Value: -0.00000034139637
-  m_Size: 0.05069119
+  m_Value: -0.00000004452997
+  m_Size: 0.05066182
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -75872,6 +75975,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881214482}
+  m_CullTransparentMesh: 1
+--- !u!1 &883053714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 883053715}
+  - component: {fileID: 883053717}
+  - component: {fileID: 883053716}
+  m_Layer: 0
+  m_Name: Text (Instruction manual)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &883053715
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883053714}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1535621194}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -52, y: 2183}
+  m_SizeDelta: {x: 776.574, y: 173.306}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &883053716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883053714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.4320317, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 95
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 172
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u0418\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u044F:"
+--- !u!222 &883053717
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883053714}
   m_CullTransparentMesh: 1
 --- !u!1 &883792180
 GameObject:
@@ -77245,7 +77427,7 @@ GameObject:
   - component: {fileID: 906258943}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80295,7 +80477,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 45
   m_Viewport: {fileID: 5110678}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
@@ -80609,7 +80791,7 @@ GameObject:
   - component: {fileID: 950625822}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80694,6 +80876,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -81196,7 +81390,7 @@ GameObject:
   - component: {fileID: 958197976}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81281,6 +81475,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -81883,7 +82089,7 @@ GameObject:
   - component: {fileID: 964637726}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83895,7 +84101,7 @@ GameObject:
   - component: {fileID: 985501764}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84631,7 +84837,7 @@ GameObject:
   - component: {fileID: 996014545}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84852,7 +85058,7 @@ GameObject:
   - component: {fileID: 998939659}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84937,6 +85143,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -88953,7 +89171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1049572668
 RectTransform:
   m_ObjectHideFlags: 0
@@ -90091,7 +90309,7 @@ GameObject:
   - component: {fileID: 1061436474}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90176,6 +90394,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -95221,7 +95451,7 @@ GameObject:
   - component: {fileID: 1112118768}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95366,7 +95596,7 @@ GameObject:
   - component: {fileID: 1112274431}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95451,6 +95681,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -97760,7 +98002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1139137797
 RectTransform:
   m_ObjectHideFlags: 0
@@ -97836,7 +98078,7 @@ GameObject:
   - component: {fileID: 1140099594}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97921,6 +98163,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -99461,6 +99715,162 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
+--- !u!1 &1157178137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1157178138}
+  - component: {fileID: 1157178141}
+  - component: {fileID: 1157178140}
+  - component: {fileID: 1157178139}
+  m_Layer: 0
+  m_Name: Button (Next)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1157178138
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157178137}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1535621194}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 838, y: 1313}
+  m_SizeDelta: {x: 160, y: 137.607}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1157178139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157178137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1157178140}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 65737190}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 766921961}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1535621193}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1157178140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157178137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: da4cbf438ce09fb4bb040379592fa6e2, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1157178141
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157178137}
+  m_CullTransparentMesh: 1
 --- !u!1 &1159853259
 GameObject:
   m_ObjectHideFlags: 0
@@ -99871,7 +100281,7 @@ GameObject:
   - component: {fileID: 1166207572}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100606,7 +101016,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 876, y: -851}
+  m_AnchoredPosition: {x: 876.0001, y: -851}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1169112268
@@ -102053,6 +102463,234 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186810620}
   m_CullTransparentMesh: 1
+--- !u!1 &1189853718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1189853719}
+  - component: {fileID: 1189853722}
+  - component: {fileID: 1189853721}
+  - component: {fileID: 1189853720}
+  m_Layer: 0
+  m_Name: Text (Explanation)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1189853719
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189853718}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 54213268}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 35, y: 636}
+  m_SizeDelta: {x: 1946.708, y: 2791.9998}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1189853720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189853718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
+--- !u!114 &1189853721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189853718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 50
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 121
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "1. \u041E\u0447\u0435\u043D\u044C \u043D\u0438\u0437\u043A\u0438\u0439
+    \u0443\u0440\u043E\u0432\u0435\u043D\u044C \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u0438\u0437\u0443\u0435\u0442\u0441\u044F
+    \u043A\u0440\u0430\u0439\u043D\u0435 \u043D\u0438\u0437\u043A\u0438\u043C \u0443\u0440\u043E\u0432\u043D\u0435\u043C
+    \u043F\u0440\u043E\u044F\u0432\u043B\u0435\u043D\u0438\u044F \u0441\u043A\u043B\u043E\u043D\u043D\u043E\u0441\u0442\u0435\u0439
+    \u043A \u043A\u043E\u043C\u043C\u0443\u043D\u0438\u043A\u0430\u0442\u0438\u0432\u043D\u043E\u0439
+    \u0438 \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0442\u043E\u0440\u0441\u043A\u043E\u0439
+    \u0434\u0435\u044F\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u0438.\r\n\r\n2.
+    \u0423 \u0438\u0441\u043F\u044B\u0442\u0443\u0435\u043C\u044B\u0445, \u0438\u043C\u0435\u044E\u0449\u0438\u0445
+    \u043D\u0438\u0437\u043A\u0438\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C,
+    \u0440\u0430\u0437\u0432\u0438\u0442\u0438\u0435 \u043A\u043E\u043C\u043C\u0443\u043D\u0438\u043A\u0430\u0442\u0438\u0432\u043D\u044B\u0445
+    \u0438 \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0442\u043E\u0440\u0441\u043A\u0438\u0445
+    \u0441\u043A\u043B\u043E\u043D\u043D\u043E\u0441\u0442\u0435\u0439 \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F
+    \u043D\u0430 \u0443\u0440\u043E\u0432\u043D\u0435 \u043D\u0438\u0436\u0435 \u0441\u0440\u0435\u0434\u043D\u0435\u0433\u043E.
+    \u041E\u043D\u0438 \u043D\u0435 \u0441\u0442\u0440\u0435\u043C\u044F\u0442\u0441\u044F
+    \u043A \u043E\u0431\u0449\u0435\u043D\u0438\u044E, \u0447\u0443\u0432\u0441\u0442\u0432\u0443\u044E\u0442
+    \u0441\u0435\u0431\u044F \u0441\u043A\u043E\u0432\u0430\u043D\u043D\u043E \u0432
+    \u043D\u043E\u0432\u043E\u0439 \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u0438,
+    \u043A\u043E\u043B\u043B\u0435\u043A\u0442\u0438\u0432\u0435, \u043F\u0440\u0435\u0434\u043F\u043E\u0447\u0438\u0442\u0430\u044E\u0442
+    \u043F\u0440\u043E\u0432\u043E\u0434\u0438\u0442\u044C \u0432\u0440\u0435\u043C\u044F
+    \u043D\u0430\u0435\u0434\u0438\u043D\u0435 \u0441 \u0441\u043E\u0431\u043E\u0439,
+    \u043E\u0433\u0440\u0430\u043D\u0438\u0447\u0438\u0432\u0430\u044E\u0442 \u0441\u0432\u043E\u0438
+    \u0437\u043D\u0430\u043A\u043E\u043C\u0441\u0442\u0432\u0430, \u0438\u0441\u043F\u044B\u0442\u044B\u0432\u0430\u044E\u0442
+    \u0442\u0440\u0443\u0434\u043D\u043E\u0441\u0442\u0438 \u0432 \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0438
+    \u043A\u043E\u043D\u0442\u0430\u043A\u0442\u043E\u0432 \u0441 \u043B\u044E\u0434\u044C\u043C\u0438
+    \u0438 \u0432 \u0432\u044B\u0441\u0442\u0443\u043F\u043B\u0435\u043D\u0438\u0438
+    \u043F\u0435\u0440\u0435\u0434 \u0430\u0443\u0434\u0438\u0442\u043E\u0440\u0438\u0435\u0439,
+    \u043F\u043B\u043E\u0445\u043E \u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0443\u044E\u0442\u0441\u044F
+    \u0432 \u043D\u0435\u0437\u043D\u0430\u043A\u043E\u043C\u043E\u0439 \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438,
+    \u043D\u0435 \u043E\u0442\u0441\u0442\u0430\u0438\u0432\u0430\u044E\u0442 \u0441\u0432\u043E\u0435
+    \u043C\u043D\u0435\u043D\u0438\u0435, \u0442\u044F\u0436\u0435\u043B\u043E \u043F\u0435\u0440\u0435\u0436\u0438\u0432\u0430\u044E\u0442
+    \u043E\u0431\u0438\u0434\u044B. \u041F\u0440\u043E\u044F\u0432\u043B\u0435\u043D\u0438\u0435
+    \u0438\u043D\u0438\u0446\u0438\u0430\u0442\u0438\u0432\u044B \u0432 \u043E\u0431\u0449\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0439
+    \u0434\u0435\u044F\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u0438 \u043A\u0440\u0430\u0439\u043D\u0435
+    \u0437\u0430\u043D\u0438\u0436\u0435\u043D\u043E, \u0432\u043E \u043C\u043D\u043E\u0433\u0438\u0445
+    \u0434\u0435\u043B\u0430\u0445 \u043E\u043D\u0438 \u043F\u0440\u0435\u0434\u043F\u043E\u0447\u0438\u0442\u0430\u044E\u0442
+    \u0438\u0437\u0431\u0435\u0433\u0430\u0442\u044C \u043F\u0440\u0438\u043D\u044F\u0442\u0438\u044F
+    \u0441\u0430\u043C\u043E\u0441\u0442\u043E\u044F\u0442\u0435\u043B\u044C\u043D\u044B\u0445
+    \u0440\u0435\u0448\u0435\u043D\u0438\u0439.\r\n\r\n3. \u0414\u043B\u044F \u0438\u0441\u043F\u044B\u0442\u0443\u0435\u043C\u044B\u0445,
+    \u0438\u043C\u0435\u044E\u0449\u0438\u0445 \u0441\u0440\u0435\u0434\u043D\u0438\u0439
+    \u0443\u0440\u043E\u0432\u0435\u043D\u044C, \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u0435\u043D
+    \u0441\u0440\u0435\u0434\u043D\u0438\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C
+    \u043F\u0440\u043E\u044F\u0432\u043B\u0435\u043D\u0438\u044F \u043A\u043E\u043C\u043C\u0443\u043D\u0438\u043A\u0430\u0442\u0438\u0432\u043D\u044B\u0445
+    \u0438 \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0442\u043E\u0440\u0441\u043A\u0438\u0445
+    \u0441\u043A\u043B\u043E\u043D\u043D\u043E\u0441\u0442\u0435\u0439. \u041E\u0431\u043B\u0430\u0434\u0430\u044F
+    \u0432 \u0446\u0435\u043B\u043E\u043C \u0441\u0440\u0435\u0434\u043D\u0438\u043C\u0438
+    \u043F\u043E\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u044F\u043C\u0438, \u043E\u043D\u0438
+    \u0441\u0442\u0440\u0435\u043C\u044F\u0442\u0441\u044F \u043A \u043A\u043E\u043D\u0442\u0430\u043A\u0442\u0430\u043C
+    \u0441 \u043B\u044E\u0434\u044C\u043C\u0438, \u043D\u0435 \u043E\u0433\u0440\u0430\u043D\u0438\u0447\u0438\u0432\u0430\u044E\u0442
+    \u043A\u0440\u0443\u0433 \u0437\u043D\u0430\u043A\u043E\u043C\u0441\u0442\u0432,
+    \u043E\u0442\u0441\u0442\u0430\u0438\u0432\u0430\u044E\u0442 \u0441\u0432\u043E\u0435
+    \u043C\u043D\u0435\u043D\u0438\u0435, \u043F\u043B\u0430\u043D\u0438\u0440\u0443\u044E\u0442
+    \u0441\u0432\u043E\u044E \u0440\u0430\u0431\u043E\u0442\u0443. \u041E\u0434\u043D\u0430\u043A\u043E
+    \u201C\u043F\u043E\u0442\u0435\u043D\u0446\u0438\u0430\u043B\u201D \u044D\u0442\u0438\u0445
+    \u0441\u043A\u043B\u043E\u043D\u043D\u043E\u0441\u0442\u0435\u0439 \u043D\u0435
+    \u043E\u0442\u043B\u0438\u0447\u0430\u0435\u0442\u0441\u044F \u0432\u044B\u0441\u043E\u043A\u043E\u0439
+    \u0443\u0441\u0442\u043E\u0439\u0447\u0438\u0432\u043E\u0441\u0442\u044C\u044E.
+    \u042D\u0442\u0430 \u0433\u0440\u0443\u043F\u043F\u0430 \u0438\u0441\u043F\u044B\u0442\u0443\u0435\u043C\u044B\u0445
+    \u043D\u0443\u0436\u0434\u0430\u0435\u0442\u0441\u044F \u0432 \u0434\u0430\u043B\u044C\u043D\u0435\u0439\u0448\u0435\u0439
+    \u0441\u0435\u0440\u044C\u0435\u0437\u043D\u043E\u0439 \u0438 \u043F\u043B\u0430\u043D\u043E\u043C\u0435\u0440\u043D\u043E\u0439
+    \u0432\u043E\u0441\u043F\u0438\u0442\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u0439
+    \u0440\u0430\u0431\u043E\u0442\u0435 \u0441 \u043D\u0438\u043C\u0438 \u043F\u043E
+    \u0444\u043E\u0440\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044E \u0438
+    \u0440\u0430\u0437\u0432\u0438\u0442\u0438\u044E \u0438\u0445 \u043A\u043E\u043C\u043C\u0443\u043D\u0438\u043A\u0430\u0442\u0438\u0432\u043D\u044B\u0445
+    \u0438 \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0442\u043E\u0440\u0441\u043A\u0438\u0445
+    \u0441\u043A\u043B\u043E\u043D\u043D\u043E\u0441\u0442\u0435\u0439.\r\n\r\n4.
+    \u0418\u0441\u043F\u044B\u0442\u0443\u0435\u043C\u044B\u0435, \u0438\u043C\u0435\u044E\u0449\u0438\u0435
+    \u0432\u044B\u0441\u043E\u043A\u0438\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C,
+    \u043E\u0442\u043D\u0435\u0441\u0435\u043D\u044B \u043A \u0433\u0440\u0443\u043F\u043F\u0435
+    \u0441 \u0432\u044B\u0441\u043E\u043A\u0438\u043C \u0443\u0440\u043E\u0432\u043D\u0435\u043C
+    \u043F\u0440\u043E\u044F\u0432\u043B\u0435\u043D\u0438\u044F \u043A\u043E\u043C\u043C\u0443\u043D\u0438\u043A\u0430\u0442\u0438\u0432\u043D\u044B\u0445
+    \u0438 \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0442\u043E\u0440\u0441\u043A\u0438\u0445
+    \u0441\u043A\u043B\u043E\u043D\u043D\u043E\u0441\u0442\u0435\u0439. \u041E\u043D\u0438
+    \u043D\u0435 \u0442\u0435\u0440\u044F\u044E\u0442\u0441\u044F \u0432 \u043D\u043E\u0432\u043E\u0439
+    \u043E\u0431\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0435, \u0431\u044B\u0441\u0442\u0440\u043E
+    \u043D\u0430\u0445\u043E\u0434\u044F\u0442 \u0434\u0440\u0443\u0437\u0435\u0439,
+    \u043F\u043E\u0441\u0442\u043E\u044F\u043D\u043D\u043E \u0441\u0442\u0440\u0435\u043C\u044F\u0442\u0441\u044F
+    \u0440\u0430\u0441\u0448\u0438\u0440\u0438\u0442\u044C \u043A\u0440\u0443\u0433
+    \u0441\u0432\u043E\u0438\u0445 \u0437\u043D\u0430\u043A\u043E\u043C\u044B\u0445,
+    \u0437\u0430\u043D\u0438\u043C\u0430\u044E\u0442\u0441\u044F \u043E\u0431\u0449\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0439
+    \u0440\u0430\u0431\u043E\u0442\u043E\u0439, \u043F\u043E\u043C\u043E\u0433\u0430\u044E\u0442
+    \u0431\u043B\u0438\u0437\u043A\u0438\u043C, \u0434\u0440\u0443\u0437\u044C\u044F\u043C,
+    \u043F\u0440\u043E\u044F\u0432\u043B\u044F\u044E\u0442 \u0438\u043D\u0438\u0446\u0438\u0430\u0442\u0438\u0432\u0443
+    \u0432 \u043E\u0431\u0449\u0435\u043D\u0438\u0438, \u0441 \u0443\u0434\u043E\u0432\u043E\u043B\u044C\u0441\u0442\u0432\u0438\u0435\u043C
+    \u043F\u0440\u0438\u043D\u0438\u043C\u0430\u044E\u0442 \u0443\u0447\u0430\u0441\u0442\u0438\u0435
+    \u0432 \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0446\u0438\u0438 \u043E\u0431\u0449\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0445
+    \u043C\u0435\u0440\u043E\u043F\u0440\u0438\u044F\u0442\u0438\u0439, \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u044B
+    \u043F\u0440\u0438\u043D\u044F\u0442\u044C \u0441\u0430\u043C\u043E\u0441\u0442\u043E\u044F\u0442\u0435\u043B\u044C\u043D\u043E\u0435
+    \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u0432 \u0442\u0440\u0443\u0434\u043D\u043E\u0439
+    \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438. \u0412\u0441\u0435 \u044D\u0442\u043E
+    \u043E\u043D\u0438 \u0434\u0435\u043B\u0430\u044E\u0442 \u043D\u0435 \u043F\u043E
+    \u043F\u0440\u0438\u043D\u0443\u0436\u0434\u0435\u043D\u0438\u044E, \u0430 \u0441\u043E\u0433\u043B\u0430\u0441\u043D\u043E
+    \u0432\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0438\u043C \u0443\u0441\u0442\u0440\u0435\u043C\u043B\u0435\u043D\u0438\u044F\u043C.\r\n\r\n5.
+    \u0418, \u043D\u0430\u043A\u043E\u043D\u0435\u0446, \u0442\u0430 \u0433\u0440\u0443\u043F\u043F\u0430
+    \u0438\u0441\u043F\u044B\u0442\u0443\u0435\u043C\u044B\u0445, \u0438\u043C\u0435\u044E\u0449\u0438\u0445
+    \u043E\u0447\u0435\u043D\u044C \u0432\u044B\u0441\u043E\u043A\u0438\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C
+    \u043E\u0431\u043B\u0430\u0434\u0430\u0435\u0442 \u043E\u0447\u0435\u043D\u044C
+    \u0432\u044B\u0441\u043E\u043A\u0438\u043C \u0443\u0440\u043E\u0432\u043D\u0435\u043C
+    \u043F\u0440\u043E\u044F\u0432\u043B\u0435\u043D\u0438\u044F \u043A\u043E\u043C\u043C\u0443\u043D\u0438\u043A\u0430\u0442\u0438\u0432\u043D\u044B\u0445
+    \u0438 \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0442\u043E\u0440\u0441\u043A\u0438\u0445
+    \u0441\u043A\u043B\u043E\u043D\u043D\u043E\u0441\u0442\u0435\u0439. \u041E\u043D\u0438
+    \u0438\u0441\u043F\u044B\u0442\u044B\u0432\u0430\u044E\u0442 \u043F\u043E\u0442\u0440\u0435\u0431\u043D\u043E\u0441\u0442\u044C
+    \u0432 \u043A\u043E\u043C\u043C\u0443\u043D\u0438\u043A\u0430\u0442\u0438\u0432\u043D\u043E\u0439
+    \u0438 \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0442\u043E\u0440\u0441\u043A\u043E\u0439
+    \u0434\u0435\u044F\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u0438 \u0438
+    \u0430\u043A\u0442\u0438\u0432\u043D\u043E \u0441\u0442\u0440\u0435\u043C\u044F\u0442\u0441\u044F
+    \u043A \u043D\u0435\u0439. \u0414\u043B\u044F \u043D\u0438\u0445 \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u043D\u044B
+    \u0431\u044B\u0441\u0442\u0440\u0430\u044F \u043E\u0440\u0438\u0435\u043D\u0442\u0430\u0446\u0438\u044F
+    \u0432 \u0442\u0440\u0443\u0434\u043D\u044B\u0445 \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u044F\u0445,
+    \u043D\u0435\u043F\u0440\u0438\u043D\u0443\u0436\u0434\u0435\u043D\u043D\u043E\u0441\u0442\u044C
+    \u043F\u043E\u0432\u0435\u0434\u0435\u043D\u0438\u044F \u0432 \u043D\u043E\u0432\u043E\u043C
+    \u043A\u043E\u043B\u043B\u0435\u043A\u0442\u0438\u0432\u0435. \u0418\u0441\u043F\u044B\u0442\u0443\u0435\u043C\u044B\u0435
+    \u044D\u0442\u043E\u0439 \u0433\u0440\u0443\u043F\u043F\u044B \u0438\u043D\u0438\u0446\u0438\u0430\u0442\u0438\u0432\u043D\u044B,
+    \u043F\u0440\u0435\u0434\u043F\u043E\u0447\u0438\u0442\u0430\u044E\u0442 \u0432
+    \u0432\u0430\u0436\u043D\u043E\u043C \u0434\u0435\u043B\u0435 \u0438\u043B\u0438
+    \u0441\u043E\u0437\u0434\u0430\u0432\u0448\u0435\u0439\u0441\u044F \u0441\u043B\u043E\u0436\u043D\u043E\u0439
+    \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438 \u043F\u0440\u0438\u043D\u0438\u043C\u0430\u0442\u044C
+    \u0441\u0430\u043C\u043E\u0441\u0442\u043E\u044F\u0442\u0435\u043B\u044C\u043D\u044B\u0435
+    \u0440\u0435\u0448\u0435\u043D\u0438\u044F, \u043E\u0442\u0441\u0442\u0430\u0438\u0432\u0430\u044E\u0442
+    \u0441\u0432\u043E\u0435 \u043C\u043D\u0435\u043D\u0438\u0435 \u0438 \u0434\u043E\u0431\u0438\u0432\u0430\u044E\u0442\u0441\u044F,
+    \u0447\u0442\u043E\u0431\u044B \u043E\u043D\u043E \u0431\u044B\u043B\u043E \u043F\u0440\u0438\u043D\u044F\u0442\u043E
+    \u0442\u043E\u0432\u0430\u0440\u0438\u0449\u0430\u043C\u0438. \u041E\u043D\u0438
+    \u043C\u043E\u0433\u0443\u0442 \u0432\u043D\u0435\u0441\u0442\u0438 \u043E\u0436\u0438\u0432\u043B\u0435\u043D\u0438\u0435
+    \u0432 \u043D\u0435\u0437\u043D\u0430\u043A\u043E\u043C\u0443\u044E \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044E,
+    \u043B\u044E\u0431\u044F\u0442 \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u043E\u0432\u044B\u0432\u0430\u0442\u044C
+    \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u044B\u0435 \u0438\u0433\u0440\u044B,
+    \u043C\u0435\u0440\u043E\u043F\u0440\u0438\u044F\u0442\u0438\u044F, \u043D\u0430\u0441\u0442\u043E\u0439\u0447\u0438\u0432\u044B
+    \u0432 \u0434\u0435\u044F\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u0438,
+    \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u0438\u0445 \u043F\u0440\u0438\u0432\u043B\u0435\u043A\u0430\u0435\u0442.
+    \u041E\u043D\u0438 \u0441\u0430\u043C\u0438 \u0438\u0449\u0443\u0442 \u0442\u0430\u043A\u0438\u0435
+    \u0434\u0435\u043B\u0430, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0431\u044B
+    \u0443\u0434\u043E\u0432\u043B\u0435\u0442\u0432\u043E\u0440\u044F\u043B\u0438
+    \u0438\u0445 \u043F\u043E\u0442\u0440\u0435\u0431\u043D\u043E\u0441\u0442\u044C
+    \u0432 \u043A\u043E\u043C\u043C\u0443\u043D\u0438\u043A\u0430\u0442\u0438\u0432\u043D\u043E\u0439
+    \u0438 \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0442\u043E\u0440\u0441\u043A\u043E\u0439
+    \u0434\u0435\u044F\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u0438.\r\n"
+--- !u!222 &1189853722
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189853718}
+  m_CullTransparentMesh: 1
 --- !u!1 &1192795864
 GameObject:
   m_ObjectHideFlags: 0
@@ -102591,7 +103229,7 @@ GameObject:
   - component: {fileID: 1195144552}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103003,7 +103641,7 @@ GameObject:
   - component: {fileID: 1197717632}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103088,6 +103726,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -105176,7 +105826,7 @@ GameObject:
   - component: {fileID: 1226235347}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105245,6 +105895,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Result
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 54213267}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -107140,7 +107802,7 @@ GameObject:
   - component: {fileID: 1246082946}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107361,7 +108023,7 @@ GameObject:
   - component: {fileID: 1247226913}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108949,81 +109611,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259161156}
   m_CullTransparentMesh: 1
---- !u!1 &1260713330
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1260713331}
-  - component: {fileID: 1260713333}
-  - component: {fileID: 1260713332}
-  m_Layer: 0
-  m_Name: Handle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1260713331
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260713330}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1430718503}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1260713332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260713330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1260713333
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260713330}
-  m_CullTransparentMesh: 1
 --- !u!1 &1261672974
 GameObject:
   m_ObjectHideFlags: 0
@@ -110193,7 +110780,7 @@ GameObject:
   - component: {fileID: 1276261490}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110278,6 +110865,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -111003,6 +111602,82 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286469687}
+  m_CullTransparentMesh: 1
+--- !u!1 &1286912595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1286912596}
+  - component: {fileID: 1286912598}
+  - component: {fileID: 1286912597}
+  m_Layer: 0
+  m_Name: Pointer to explanation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1286912596
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286912595}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1.81, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1332475346}
+  m_Father: {fileID: 54213268}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 858, y: -1480}
+  m_SizeDelta: {x: 252.677, y: 120.029}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1286912597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286912595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 1483bf7fb02074945b58dd24fb22ea6c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1286912598
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286912595}
   m_CullTransparentMesh: 1
 --- !u!1 &1288348955
 GameObject:
@@ -113334,7 +114009,7 @@ GameObject:
   - component: {fileID: 1324642417}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113419,6 +114094,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -114392,6 +115079,85 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
+--- !u!1 &1332475345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1332475346}
+  - component: {fileID: 1332475348}
+  - component: {fileID: 1332475347}
+  m_Layer: 0
+  m_Name: Text (Explanation above)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1332475346
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332475345}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.20804, y: 0.1331456, z: 0.20804}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1286912596}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.0001373291, y: -99}
+  m_SizeDelta: {x: 961.88, y: 456.92}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1332475347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332475345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.28627452, g: 0.3647059, b: 0.41960788, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 150
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 190
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u041F\u043E\u044F\u0441\u043D\u0435\u043D\u0438\u0435 \u0432\u044B\u0448\u0435"
+--- !u!222 &1332475348
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332475345}
+  m_CullTransparentMesh: 1
 --- !u!1 &1333219536
 GameObject:
   m_ObjectHideFlags: 0
@@ -114505,7 +115271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1333621250
 RectTransform:
   m_ObjectHideFlags: 0
@@ -115422,7 +116188,7 @@ GameObject:
   - component: {fileID: 1343395489}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115722,7 +116488,7 @@ GameObject:
   - component: {fileID: 1346679619}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115791,6 +116557,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Result
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 54213267}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -119909,7 +120699,7 @@ GameObject:
   - component: {fileID: 1400605304}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121715,7 +122505,7 @@ GameObject:
   - component: {fileID: 1420355117}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123383,42 +124173,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430128835}
   m_CullTransparentMesh: 1
---- !u!1 &1430718502
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1430718503}
-  m_Layer: 0
-  m_Name: Sliding Area
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1430718503
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430718502}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1260713331}
-  m_Father: {fileID: 540887249}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: -20}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1433202772
 GameObject:
   m_ObjectHideFlags: 0
@@ -124343,7 +125097,7 @@ GameObject:
   - component: {fileID: 1450399658}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124428,6 +125182,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -125834,7 +126600,7 @@ GameObject:
   - component: {fileID: 1467027963}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129663,7 +130429,7 @@ GameObject:
   - component: {fileID: 1519441792}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129748,6 +130514,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -131293,6 +132071,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535291919}
   m_CullTransparentMesh: 1
+--- !u!1 &1535621193
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1535621194}
+  - component: {fileID: 1535621196}
+  - component: {fileID: 1535621195}
+  m_Layer: 0
+  m_Name: The introductory panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1535621194
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535621193}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 883053715}
+  - {fileID: 1568022082}
+  - {fileID: 1157178138}
+  m_Father: {fileID: 1621219058}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.00012207031, y: 0.00048828125}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1535621195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535621193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19005881, g: 0.16262725, b: 0.94716984, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1535621196
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535621193}
+  m_CullTransparentMesh: 1
 --- !u!1 &1538549387
 GameObject:
   m_ObjectHideFlags: 0
@@ -131307,7 +132163,7 @@ GameObject:
   - component: {fileID: 1538549389}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133578,7 +134434,7 @@ GameObject:
   - component: {fileID: 1558821782}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134963,6 +135819,123 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567524868}
   m_CullTransparentMesh: 1
+--- !u!1 &1568022081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1568022082}
+  - component: {fileID: 1568022084}
+  - component: {fileID: 1568022083}
+  m_Layer: 0
+  m_Name: Text (Content)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1568022082
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568022081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1535621194}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -8.697, y: 1604}
+  m_SizeDelta: {x: 1997.383, y: 988.714}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1568022083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568022081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 1, b: 0.91666675, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 50
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 121
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u0412\u0430\u043C \u043D\u0443\u0436\u043D\u043E \u043E\u0442\u0432\u0435\u0442\u0438\u0442\u044C
+    \u043D\u0430 \u0432\u0441\u0435 \u0432\u043E\u043F\u0440\u043E\u0441\u044B \u044D\u0442\u043E\u0433\u043E
+    \u0442\u0435\u0441\u0442\u0430. \u0421\u0432\u043E\u0431\u043E\u0434\u043D\u043E
+    \u0432\u044B\u0440\u0430\u0436\u0430\u0439\u0442\u0435 \u0441\u0432\u043E\u0438
+    \u043C\u043D\u0435\u043D\u0438\u0435 \u043F\u043E \u043A\u0430\u0436\u0434\u043E\u043C\u0443
+    \u0432\u043E\u043F\u0440\u043E\u0441\u0443, \u0438 \u043E\u0442\u0432\u0435\u0447\u0430\u0439\u0442\u0435
+    \u043D\u0430 \u043D\u0438\u0445 \u0442\u0430\u043A: \r\n\u0435\u0441\u043B\u0438
+    \u0412\u0430\u0448 \u043E\u0442\u0432\u0435\u0442 \u043D\u0430 \u0432\u043E\u043F\u0440\u043E\u0441
+    \u043F\u043E\u043B\u043E\u0436\u0438\u0442\u0435\u043B\u0435\u043D (\u0412\u044B
+    \u0441\u043E\u0433\u043B\u0430\u0441\u043D\u044B) \u043F\u043E\u0441\u0442\u0430\u0432\u044C\u0442\u0435
+    \u0437\u043D\u0430\u043A \u201C+\u201D, \r\n\u0435\u0441\u043B\u0438 \u0436\u0435
+    \u0412\u0430\u0448 \u043E\u0442\u0432\u0435\u0442 \u043E\u0442\u0440\u0438\u0446\u0430\u0442\u0435\u043B\u0435\u043D
+    (\u0412\u044B \u043D\u0435 \u0441\u043E\u0433\u043B\u0430\u0441\u043D\u044B)
+    - \u043F\u043E\u0441\u0442\u0430\u0432\u044C\u0442\u0435 \u0437\u043D\u0430\u043A
+    \u201C-\u201D. \r\n\u0418\u043C\u0435\u0439\u0442\u0435 \u0432 \u0432\u0438\u0434\u0443,
+    \u0447\u0442\u043E \u0432\u043E\u043F\u0440\u043E\u0441\u044B \u043A\u043E\u0440\u043E\u0442\u043A\u0438\u0435
+    \u0438 \u043D\u0435 \u043C\u043E\u0433\u0443\u0442 \u0441\u043E\u0434\u0435\u0440\u0436\u0430\u0442\u044C
+    \u0432\u0441\u0435\u0445 \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u044B\u0445
+    \u043F\u043E\u0434\u0440\u043E\u0431\u043D\u043E\u0441\u0442\u0435\u0439. \u041F\u043E\u044D\u0442\u043E\u043C\u0443
+    \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u044C\u0442\u0435 \u0441\u0435\u0431\u0435
+    \u0442\u0438\u043F\u0438\u0447\u043D\u044B\u0435 \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438
+    \u0438 \u043D\u0435 \u0437\u0430\u0434\u0443\u043C\u044B\u0432\u0430\u0439\u0442\u0435\u0441\u044C
+    \u043D\u0430\u0434 \u0434\u0435\u0442\u0430\u043B\u044F\u043C\u0438. \u041D\u0435
+    \u0441\u043B\u0435\u0434\u0443\u0435\u0442 \u0442\u0440\u0430\u0442\u0438\u0442\u044C
+    \u043C\u043D\u043E\u0433\u043E \u0432\u0440\u0435\u043C\u0435\u043D\u0438 \u043D\u0430
+    \u043E\u0431\u0434\u0443\u043C\u044B\u0432\u0430\u043D\u0438\u0435, \u043E\u0442\u0432\u0435\u0447\u0430\u0439\u0442\u0435
+    \u0431\u044B\u0441\u0442\u0440\u043E. \u041F\u0440\u0438 \u043E\u0442\u0432\u0435\u0442\u0435
+    \u043D\u0430 \u043B\u044E\u0431\u043E\u0439 \u0438\u0437 \u044D\u0442\u0438\u0445
+    \u0432\u043E\u043F\u0440\u043E\u0441\u043E\u0432, \u043E\u0431\u0440\u0430\u0449\u0430\u0439\u0442\u0435
+    \u0432\u043D\u0438\u043C\u0430\u043D\u0438\u0435 \u043D\u0430 \u0435\u0433\u043E
+    \u043F\u0435\u0440\u0432\u044B\u0435 \u0441\u043B\u043E\u0432\u0430. \u041E\u0442\u0432\u0435\u0447\u0430\u044F
+    \u043D\u0430 \u0432\u043E\u043F\u0440\u043E\u0441\u044B, \u043D\u0435 \u0441\u0442\u0440\u0435\u043C\u0438\u0442\u0435\u0441\u044C
+    \u043F\u0440\u043E\u0438\u0437\u0432\u0435\u0441\u0442\u0438 \u0437\u0430\u0432\u0435\u0434\u043E\u043C\u043E
+    \u0431\u043B\u0430\u0433\u043E\u043F\u0440\u0438\u044F\u0442\u043D\u043E\u0435
+    \u0432\u043F\u0435\u0447\u0430\u0442\u043B\u0435\u043D\u0438\u0435 \u0441\u0432\u043E\u0438\u043C\u0438
+    \u043E\u0442\u0432\u0435\u0442\u0430\u043C\u0438. \u041D\u0430\u043C \u0432\u0430\u0436\u0435\u043D
+    \u043D\u0435 \u043A\u043E\u043D\u043A\u0440\u0435\u0442\u043D\u044B\u0439 \u043E\u0442\u0432\u0435\u0442,
+    \u0430 \u0441\u0443\u043C\u043C\u0430\u0440\u043D\u044B\u0439 \u0431\u0430\u043B\u043B
+    \u043F\u043E \u0441\u0435\u0440\u0438\u0438 \u0432\u043E\u043F\u0440\u043E\u0441\u043E\u0432\r\n"
+--- !u!222 &1568022084
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568022081}
+  m_CullTransparentMesh: 1
 --- !u!1 &1568064774
 GameObject:
   m_ObjectHideFlags: 0
@@ -135608,7 +136581,7 @@ GameObject:
   - component: {fileID: 1572679083}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135693,6 +136666,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -137076,7 +138061,7 @@ GameObject:
   - component: {fileID: 1592261053}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137169,6 +138154,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1592261054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137221,7 +138218,7 @@ GameObject:
   - component: {fileID: 1592435992}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137306,6 +138303,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -138620,7 +139629,7 @@ GameObject:
   - component: {fileID: 1612431687}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139348,7 +140357,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -81, y: -192}
-  m_SizeDelta: {x: 1290.924, y: 39.999996}
+  m_SizeDelta: {x: 1290.924, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1619406147
 MonoBehaviour:
@@ -139437,6 +140446,7 @@ RectTransform:
   m_LocalScale: {x: 0.80555, y: 0.80555, z: 0.80555}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1535621194}
   - {fileID: 766921962}
   - {fileID: 136707173}
   - {fileID: 173884059}
@@ -139740,9 +140750,9 @@ RectTransform:
   m_Father: {fileID: 65737189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 20, y: -17}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1621372471
 MonoBehaviour:
@@ -139788,7 +140798,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 477118906}
   m_Direction: 2
   m_Value: 1.0000004
-  m_Size: 0.26772073
+  m_Size: 0.27200225
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -141024,7 +142034,7 @@ GameObject:
   - component: {fileID: 1630082897}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142880,7 +143890,7 @@ GameObject:
   - component: {fileID: 1655307745}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142965,6 +143975,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -147966,7 +148988,7 @@ GameObject:
   - component: {fileID: 1706073000}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148368,7 +149390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1712881147
 RectTransform:
   m_ObjectHideFlags: 0
@@ -149195,7 +150217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1728917783
 RectTransform:
   m_ObjectHideFlags: 0
@@ -149896,7 +150918,7 @@ GameObject:
   - component: {fileID: 1735247318}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151958,7 +152980,7 @@ GameObject:
   - component: {fileID: 1757980297}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153589,7 +154611,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1076, y: 1215}
+  m_AnchoredPosition: {x: 1076.0001, y: 1215}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1768645899
@@ -153720,7 +154742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 988, y: -2279}
+  m_AnchoredPosition: {x: 988.0001, y: -2279}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1769607559
@@ -155706,7 +156728,7 @@ GameObject:
   - component: {fileID: 1785993070}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156678,7 +157700,7 @@ GameObject:
   - component: {fileID: 1799495397}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156763,6 +157785,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -159246,6 +160280,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831256173}
   m_CullTransparentMesh: 1
+--- !u!1 &1832069865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1832069866}
+  - component: {fileID: 1832069868}
+  - component: {fileID: 1832069867}
+  m_Layer: 0
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1832069866
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832069865}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.20804, y: 0.1331456, z: 0.20804}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1837069642}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.0001373291, y: -99}
+  m_SizeDelta: {x: 961.88, y: 456.92}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1832069867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832069865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.050516147, g: 0.6226415, b: 0.53862303, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 150
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 190
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442"
+--- !u!222 &1832069868
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832069865}
+  m_CullTransparentMesh: 1
 --- !u!1 &1835212187
 GameObject:
   m_ObjectHideFlags: 0
@@ -159282,6 +160395,151 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1837069641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1837069642}
+  - component: {fileID: 1837069645}
+  - component: {fileID: 1837069644}
+  - component: {fileID: 1837069643}
+  m_Layer: 0
+  m_Name: Button (Send)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1837069642
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837069641}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1.81, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1832069866}
+  m_Father: {fileID: 54213268}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 709, y: -2166}
+  m_SizeDelta: {x: 252.677, y: 120.029}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1837069643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837069641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 302316368}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 845555141}
+        m_TargetAssemblyTypeName: CountingInformationPsychology, Assembly-CSharp
+        m_MethodName: Http
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1837069641}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1837069644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837069641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -276664280, guid: 47da9a8e69533eb42a71ecf1f3a92baf, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1837069645
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837069641}
+  m_CullTransparentMesh: 1
 --- !u!1 &1837224322
 GameObject:
   m_ObjectHideFlags: 0
@@ -161529,7 +162787,7 @@ GameObject:
   - component: {fileID: 1873171163}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161614,6 +162872,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Organizational
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -162849,7 +164119,7 @@ GameObject:
   - component: {fileID: 1881324263}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162934,6 +164204,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -163581,7 +164863,7 @@ GameObject:
   - component: {fileID: 1890044094}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163975,7 +165257,7 @@ GameObject:
   - component: {fileID: 1894671512}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164060,6 +165342,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -168401,7 +169695,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 50
+  m_ScrollSensitivity: 45
   m_Viewport: {fileID: 48879783}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 367147414}
@@ -169264,7 +170558,7 @@ GameObject:
   - component: {fileID: 1949568565}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170204,7 +171498,7 @@ GameObject:
   - component: {fileID: 1964376242}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170289,6 +171583,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -173132,7 +174438,7 @@ GameObject:
   - component: {fileID: 1991839914}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: OrganizationalInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175856,7 +177162,7 @@ GameObject:
   - component: {fileID: 2031328564}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175941,6 +177247,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -180172,7 +181490,7 @@ GameObject:
   - component: {fileID: 2080609688}
   m_Layer: 0
   m_Name: Button (-)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181343,7 +182661,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -120, y: -636}
-  m_SizeDelta: {x: 1290.924, y: 39.999996}
+  m_SizeDelta: {x: 1290.924, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2091990197
 MonoBehaviour:
@@ -182560,7 +183878,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 45
   m_Viewport: {fileID: 279399328}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 152822476}
@@ -183222,7 +184540,7 @@ GameObject:
   - component: {fileID: 2123602890}
   m_Layer: 0
   m_Name: Button (+)
-  m_TagString: Untagged
+  m_TagString: CommunicativeInclinations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183307,6 +184625,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845555148}
+        m_TargetAssemblyTypeName: CBSQuestionnaire, Assembly-CSharp
+        m_MethodName: Communicative
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -183466,7 +184796,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 882, y: 888}
+  m_AnchoredPosition: {x: 882.0001, y: 888}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2126101450
