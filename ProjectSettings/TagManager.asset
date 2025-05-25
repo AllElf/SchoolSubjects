@@ -35,6 +35,12 @@ TagManager:
   - Sports
   - CommunicativeInclinations
   - OrganizationalInclinations
+  - WorkingWithPeople
+  - IntellectualWork
+  - PracticalActivity
+  - AestheticActivities
+  - ExtremeActivities
+  - EconomicActivities
   layers:
   - Default
   - TransparentFX
