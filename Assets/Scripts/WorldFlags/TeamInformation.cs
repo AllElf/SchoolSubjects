@@ -15,6 +15,7 @@ public class TeamInformation : MonoBehaviour
     [Header("Objects")]
     [SerializeField] GameObject InputGameobject;
     [SerializeField] GameObject QuantityPanel;
+    [SerializeField] GameObject buttonNext;
 
     [Header("UI Elements")]
     [SerializeField] InputField inputText;
@@ -39,6 +40,11 @@ public class TeamInformation : MonoBehaviour
             QuantityPanel.SetActive(true);
             InputGameobject.SetActive(false);
         }
+        if (buttonNext != null)
+        {
+            buttonNext.SetActive(false);
+        }
+
     }
 
     public void CountCommand(int count)
@@ -92,6 +98,7 @@ public class TeamInformation : MonoBehaviour
                 currentTeamIndex = 0;
                 if(teamsProgress != null) { teamsProgress.text = $"Отвечает команда {command[currentTeamIndex].color}"; }
                 InputGameobject.SetActive(false);
+                buttonNext.SetActive(true);
                 Debug.Log("Названия всех команд успешно введены.");
             }
         }
@@ -108,11 +115,16 @@ public class TeamInformation : MonoBehaviour
         }
         command[currentTeamIndex].points++;
         currentTeamIndex++;
-        if (teamsProgress != null) { teamsProgress.text = $"Отвечает команда {command[currentTeamIndex].color}"; }
+
         if (currentTeamIndex >= command.Length)
         {
-            currentTeamIndex = 0; 
+            currentTeamIndex = 0;
             Debug.Log("Цикл по командам завершён. Начинаем заново.");
+        }
+
+        if (teamsProgress != null)
+        {
+            teamsProgress.text = $"Отвечает команда {command[currentTeamIndex].color}";
         }
     }
     public void PointTeamNoPlus()
@@ -121,12 +133,18 @@ public class TeamInformation : MonoBehaviour
         {
             return;
         }
+
         currentTeamIndex++;
-        if (teamsProgress != null) { teamsProgress.text = $"Отвечает команда {command[currentTeamIndex].color}"; }
+
         if (currentTeamIndex >= command.Length)
         {
-            currentTeamIndex = 0; 
+            currentTeamIndex = 0;
             Debug.Log("Цикл по командам завершён. Начинаем заново.");
+        }
+
+        if (teamsProgress != null)
+        {
+            teamsProgress.text = $"Отвечает команда {command[currentTeamIndex].color}";
         }
     }
 }
