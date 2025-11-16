@@ -47,4 +47,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Psychology.unity
     guid: 9148f5a498468104dbeb4fe2c26804de
+  - enabled: 1
+    path: Assets/Scenes/WorldFlags.unity
+    guid: 224dd362dabcb1b4899603e80aba3ea5
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
