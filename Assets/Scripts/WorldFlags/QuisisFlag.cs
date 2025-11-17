@@ -91,7 +91,8 @@ public class QuisisFlag : MonoBehaviour
     // ======================== RUNTIME ========================
     [SerializeField] private string currentLabel = "";   // отладка
     private List<TeamDataCountry> _pool = new List<TeamDataCountry>();
-    private TeamDataCountry _current;
+    public TeamDataCountry _current;
+    public Text testText;
     private System.Random _rng = new System.Random();
     private bool _inputLocked = false;
     private Coroutine _timerRoutine;
@@ -133,8 +134,25 @@ public class QuisisFlag : MonoBehaviour
 
         CacheButtons();
 
+        // ВАЖНО: сначала пробуем подтянуть SO через Resources
         EnsureCountryListLoaded();
         RuntimeDataSelfTest();
+
+        //  Доп. диагностика
+        if (testText != null)
+        {
+            var fromField = countryList ? countryList.name : "NULL";
+            var total = (countryList != null && countryList.Countries != null) ? countryList.Countries.Count.ToString() : "NULL";
+
+            // сколько вообще таких SO есть в Resources
+            var all = Resources.LoadAll<TeamDataCountryListRU>("");
+            string allNames = string.Join(", ", all.Select(a => a.name));
+
+            testText.text =
+                $"SO(from field): {fromField}\n" +
+                $"Countries: {total}\n" +
+                $"Resources.All<TeamDataCountryListRU>: {all.Length} [{allNames}]";
+        }
 
         countIndex = 0;
         BuildPool();
@@ -162,6 +180,10 @@ public class QuisisFlag : MonoBehaviour
 
         if (_current != null)
             currentLabel = GetLabelForDebug(_current);
+        //if(testText !=  null)
+        //{
+        //    testText.text = _current.nameCountry.ToString() + " " + _current.capitalCountry.ToString();
+        //}
     }
 
     // ======================== ПУБЛИЧНЫЕ КЛИКИ ========================
@@ -718,7 +740,7 @@ public class QuisisFlag : MonoBehaviour
                 Debug.LogError("[QuisisFlag][BuildPool] Не нашли SO в Resources → создаём временные STUB-данные");
                 _pool = new List<TeamDataCountry>()
                 {
-                    new TeamDataCountry { nameCountry="Stub1", capitalCountry="Cap1" },
+                    new TeamDataCountry { nameCountry="тут 1", capitalCountry="Cap1" },
                     new TeamDataCountry { nameCountry="Stub2", capitalCountry="Cap2" },
                     new TeamDataCountry { nameCountry="Stub3", capitalCountry="Cap3" },
                     new TeamDataCountry { nameCountry="Stub4", capitalCountry="Cap4" },
@@ -749,7 +771,7 @@ public class QuisisFlag : MonoBehaviour
             Debug.LogError("[QuisisFlag][BuildPool] countryList.Countries пуст! Создаём временные данные.");
             _pool = new List<TeamDataCountry>()
             {
-                new TeamDataCountry { nameCountry="Dummy1", capitalCountry="Cap1" },
+                new TeamDataCountry { nameCountry="тут 2", capitalCountry="Cap1" },
                 new TeamDataCountry { nameCountry="Dummy2", capitalCountry="Cap2" },
             };
             return;
@@ -775,7 +797,7 @@ public class QuisisFlag : MonoBehaviour
             Debug.LogError("[QuisisFlag][BuildPool] После фильтрации список пуст → создаём временные данные.");
             _pool = new List<TeamDataCountry>()
             {
-                new TeamDataCountry { nameCountry="DummyA", capitalCountry="CapA" },
+                new TeamDataCountry { nameCountry="Тут3", capitalCountry="CapA" },
                 new TeamDataCountry { nameCountry="DummyB", capitalCountry="CapB" },
             };
         }
