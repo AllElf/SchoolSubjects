@@ -6,6 +6,9 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
+/// <summary>
+/// Одна запись: страна + столица + флаг.
+/// </summary>
 [Serializable]
 public class TeamDataCountry
 {
@@ -16,16 +19,21 @@ public class TeamDataCountry
     public string capitalCountry;
 
     [Tooltip("Флаг (Sprite, обычно из спрайт-атласа или одиночного .png)")]
-    public Sprite flag; // РУЧНАЯ привязка ИМЕЕТ ПРИОРИТЕТ над автозагрузкой
+    public Sprite flag; // ручная привязка имеет приоритет над автозагрузкой
 }
 
-[CreateAssetMenu(menuName = "Data/Team Country List (RU)", fileName = "TeamDataCountryListRU")]
-public class TeamDataCountryListRU : ScriptableObject
+/// <summary>
+/// База стран/столиц/флагов (RU).
+/// ВАЖНО: не менять имя класса и файла, чтобы ассет не ломался.
+/// </summary>
+[CreateAssetMenu(menuName = "Data/Countries Database (RU)", fileName = "CountriesDatabaseRU")]
+public class CountriesDatabaseRU : ScriptableObject
 {
     [SerializeField] private List<TeamDataCountry> countries = new List<TeamDataCountry>();
     public List<TeamDataCountry> Countries => countries;
 
     // ----- НАСТРОЙКИ АВТОПОДХВАТА ФЛАГОВ -----
+
     [Header("Auto-Resolve Flags (Resources)")]
     [Tooltip("Папка в Resources, где лежат спрайты флагов.")]
     [SerializeField] private string flagsResourcesFolder = "Flags"; // => Assets/Resources/Flags/...
@@ -40,20 +48,21 @@ public class TeamDataCountryListRU : ScriptableObject
     public struct ManualPathOverride
     {
         public string countryName;   // ключ (как в списке)
-        public string resourcePath;  // относительный путь в Resources без расширения, например: "Flags/UK" или "Flags/Великобритания"
+        public string resourcePath;  // относительный путь в Resources без расширения, например: "Flags/UK"
     }
 
     [Tooltip("Индивидуальные переопределения путей к ресурсам для нестандартных названий/файлов.")]
     [SerializeField] private List<ManualPathOverride> manualOverrides = new List<ManualPathOverride>();
 
-    // Кэш для ускорения повторных запросов (в рантайме)
+    // Кэш флагов в рантайме
     [NonSerialized] private Dictionary<string, Sprite> _flagCache;
 
     // ======================= ЖИЗНЕННЫЙ ЦИКЛ =======================
 
     private void OnEnable()
     {
-        if (_flagCache == null) _flagCache = new Dictionary<string, Sprite>(StringComparer.OrdinalIgnoreCase);
+        if (_flagCache == null)
+            _flagCache = new Dictionary<string, Sprite>(StringComparer.OrdinalIgnoreCase);
 
         if (autoResolveMissingFlagsAtRuntime)
             TryAutoResolveFlags(overwriteExistingFlags);
@@ -62,6 +71,7 @@ public class TeamDataCountryListRU : ScriptableObject
 #if UNITY_EDITOR
     private void OnValidate()
     {
+        // Если список пустой — один раз наполняем из встроенного CSV
         if (countries == null || countries.Count == 0)
         {
             RebuildFromEmbeddedCSV();
@@ -82,21 +92,27 @@ public class TeamDataCountryListRU : ScriptableObject
         if (string.IsNullOrWhiteSpace(countryName)) return null;
 
         // 1) Найти запись
-        var item = countries?.Find(c => string.Equals(c.nameCountry, countryName, StringComparison.OrdinalIgnoreCase));
-        if (item != null && item.flag != null) return item.flag; // ручной флаг — приоритет
+        var item = countries?.Find(c =>
+            string.Equals(c.nameCountry, countryName, StringComparison.OrdinalIgnoreCase));
+
+        if (item != null && item.flag != null)
+            return item.flag; // ручной флаг — приоритет
 
         // 2) Кэш
-        if (_flagCache != null && _flagCache.TryGetValue(countryName, out var cached) && cached != null)
+        if (_flagCache != null &&
+            _flagCache.TryGetValue(countryName, out var cached) &&
+            cached != null)
+        {
             return cached;
+        }
 
         // 3) Попробовать загрузить из Resources
         var loaded = LoadFlagFromResources(countryName);
         if (loaded != null)
         {
-            // В кэш
-            if (_flagCache != null) _flagCache[countryName] = loaded;
+            if (_flagCache != null)
+                _flagCache[countryName] = loaded;
 
-            // Запишем в запись (если существует) — но только если не затираем вручную
             if (item != null && (overwriteExistingFlags || item.flag == null))
                 item.flag = loaded;
 
@@ -114,14 +130,18 @@ public class TeamDataCountryListRU : ScriptableObject
     public void TryAutoResolveFlags(bool overwrite)
     {
         if (countries == null) return;
-        if (_flagCache == null) _flagCache = new Dictionary<string, Sprite>(StringComparer.OrdinalIgnoreCase);
+
+        if (_flagCache == null)
+            _flagCache = new Dictionary<string, Sprite>(StringComparer.OrdinalIgnoreCase);
 
         foreach (var c in countries)
         {
-            if (c == null || string.IsNullOrWhiteSpace(c.nameCountry)) continue;
+            if (c == null || string.IsNullOrWhiteSpace(c.nameCountry))
+                continue;
 
             // пропускаем уже привязанные, если не хотим перезаписывать
-            if (!overwrite && c.flag != null) continue;
+            if (!overwrite && c.flag != null)
+                continue;
 
             // 1) по ручным оверрайдам
             var byOverride = TryLoadByManualOverride(c.nameCountry);
@@ -151,14 +171,14 @@ public class TeamDataCountryListRU : ScriptableObject
     private void Menu_AutoResolve_KeepManual()
     {
         TryAutoResolveFlags(overwrite: false);
-        Debug.Log("[TeamDataCountryListRU] Auto-Resolve complete (kept manual flags).");
+        Debug.Log("[CountriesDatabaseRU] Auto-Resolve complete (kept manual flags).");
     }
 
     [ContextMenu("Flags: Auto-Resolve (overwrite manual)")]
     private void Menu_AutoResolve_OverwriteManual()
     {
         TryAutoResolveFlags(overwrite: true);
-        Debug.Log("[TeamDataCountryListRU] Auto-Resolve complete (overwrote manual flags).");
+        Debug.Log("[CountriesDatabaseRU] Auto-Resolve complete (overwrote manual flags).");
     }
 #endif
 
@@ -166,7 +186,8 @@ public class TeamDataCountryListRU : ScriptableObject
 
     private Sprite TryLoadByManualOverride(string country)
     {
-        if (manualOverrides == null || manualOverrides.Count == 0) return null;
+        if (manualOverrides == null || manualOverrides.Count == 0)
+            return null;
 
         for (int i = 0; i < manualOverrides.Count; i++)
         {
@@ -178,6 +199,7 @@ public class TeamDataCountryListRU : ScriptableObject
             var s = Resources.Load<Sprite>(m.resourcePath.Trim());
             if (s != null) return s;
         }
+
         return null;
     }
 
@@ -185,9 +207,7 @@ public class TeamDataCountryListRU : ScriptableObject
     {
         if (string.IsNullOrWhiteSpace(country)) return null;
 
-        // кандидаты путей: сначала по оверраиду, далее варианты нормализации
         var variants = BuildCandidateResourcePaths(country);
-
         foreach (var path in variants)
         {
             var s = Resources.Load<Sprite>(path);
@@ -198,27 +218,25 @@ public class TeamDataCountryListRU : ScriptableObject
 
     private IEnumerable<string> BuildCandidateResourcePaths(string country)
     {
-        // Базовая папка
-        string baseDir = string.IsNullOrWhiteSpace(flagsResourcesFolder) ? "" : (flagsResourcesFolder.Trim().TrimEnd('/') + "/");
+        string baseDir = string.IsNullOrWhiteSpace(flagsResourcesFolder)
+            ? ""
+            : (flagsResourcesFolder.Trim().TrimEnd('/') + "/");
 
-        // Нормализации
         string v0 = country.Trim();
-        string v1 = v0.Replace('’', '\'');          // типографские апострофы → обычные
-        string v2 = v1.Replace("—", "-").Replace("–", "-"); // длинные тире → дефис
-        string v3 = CollapseSpaces(v2);             // множественные пробелы → один
-        string v4 = v3.Replace(' ', '_');           // пробелы → _
-        string v5 = v3.Replace(' ', '-');           // пробелы → -
-        string v6 = ReplaceYo(v3);                  // ё → е
-        string v7 = CleanPunctuation(v3);           // убираем лишние знаки
+        string v1 = v0.Replace('’', '\'');
+        string v2 = v1.Replace("—", "-").Replace("–", "-");
+        string v3 = CollapseSpaces(v2);
+        string v4 = v3.Replace(' ', '_');
+        string v5 = v3.Replace(' ', '-');
+        string v6 = ReplaceYo(v3);
+        string v7 = CleanPunctuation(v3);
 
-        // Возвращаем набор вероятных путей (без расширений)
-        // Порядок — от самого «честного» к более агрессивным нормализациям.
-        yield return baseDir + v0; // Flags/Южная Африка
-        yield return baseDir + v3; // Flags/Южная Африка (с схлопнутыми пробелами)
-        yield return baseDir + v4; // Flags/Южная_Африка
-        yield return baseDir + v5; // Flags/Южная-Африка
-        yield return baseDir + v6; // Flags/Елта (пример для ё→е)
-        yield return baseDir + v7; // убраны кавычки и проч.
+        yield return baseDir + v0;
+        yield return baseDir + v3;
+        yield return baseDir + v4;
+        yield return baseDir + v5;
+        yield return baseDir + v6;
+        yield return baseDir + v7;
     }
 
     private static string CollapseSpaces(string s)
@@ -236,7 +254,7 @@ public class TeamDataCountryListRU : ScriptableObject
     private static string CleanPunctuation(string s)
     {
         if (string.IsNullOrEmpty(s)) return s;
-        // уберём кавычки/апострофы и пр. пунктуацию, кроме дефиса и подчёркивания
+
         var chars = s.ToCharArray();
         for (int i = 0; i < chars.Length; i++)
         {
@@ -244,10 +262,11 @@ public class TeamDataCountryListRU : ScriptableObject
             if (char.IsLetterOrDigit(ch) || ch == ' ' || ch == '-' || ch == '_') continue;
             chars[i] = ' ';
         }
+
         return CollapseSpaces(new string(chars));
     }
 
-    // ======================= ВСТРОЕННОЕ НАПОЛНЕНИЕ (как у тебя) =======================
+    // ======================= ВСТРОЕННОЕ НАПОЛНЕНИЕ CSV =======================
 
 #if UNITY_EDITOR
     private void RebuildFromEmbeddedCSV()
@@ -454,6 +473,8 @@ public class TeamDataCountryListRU : ScriptableObject
 Голубая запись для проверки;Удалите меня
 ";
 
+        countries.Clear();
+
         var lines = csv.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
         foreach (var raw in lines)
         {
@@ -467,7 +488,6 @@ public class TeamDataCountryListRU : ScriptableObject
             string country = parts[0].Trim();
             string capital = parts[1].Trim();
 
-            // Пропускаем служебные строки
             if (country == "Голубая запись для проверки") continue;
 
             countries.Add(new TeamDataCountry
@@ -478,13 +498,12 @@ public class TeamDataCountryListRU : ScriptableObject
             });
         }
 
-        // По желанию проекта — исключить спорные записи:
         countries.RemoveAll(c =>
             c.nameCountry == "Тайвань" ||
             c.nameCountry == "Косово"
         );
 
-        Debug.Log($"[TeamDataCountryListRU] Автозаполнение завершено: {countries.Count} записей.");
+        Debug.Log($"[CountriesDatabaseRU] Автозаполнение завершено: {countries.Count} записей.");
     }
 #endif
 }

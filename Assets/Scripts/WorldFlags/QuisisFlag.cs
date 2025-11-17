@@ -1,297 +1,418 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
 
-#if TMP_PRESENT || TEXTMESHPRO
-using TMPro;
-#endif
-
+/// <summary>
+/// Викторина по флагам.
+/// </summary>
 public class QuisisFlag : MonoBehaviour
 {
-    // ======================== РЕЖИМЫ ========================
+    // ----- РЕЖИМЫ -----
     public enum LabelMode
     {
-        Country,                 // спрашиваем страну по флагу (Уровень 1)
-        Capital,                 // спрашиваем столицу по флагу (Уровень 2)
-        CountryWithCapital,      // страна фикс, столица верна лишь на одной (Уровень 3)
-        CapitalWithCountry       // столица фикс, страна верна лишь на одной (Уровень 4)
+        Country,
+        Capital,
+        CountryWithCapital,
+        CapitalWithCountry
     }
+
     private const int MaxLevel = 4;
 
-    // ======================== ДАННЫЕ ========================
+    // ----- ДАННЫЕ -----
     [Header("ДАННЫЕ")]
-    [SerializeField] private TeamDataCountryListRU countryList;        // ассет со странами/столицами/флагами
-    [SerializeField] private bool onlyWithFlags = true;                 // брать только те, у кого есть флаг (ручной или из Resources)
+[SerializeField] private CountriesDatabaseRU countryList;
+
+    [Tooltip("Путь в Resources до TeamDataCountryListRU, например: Data/TeamDataCountryListRU")]
+    [SerializeField] private string countryListResourcePath = "Data/TeamDataCountryListRU";
+
+    [SerializeField] private bool onlyWithFlags = true;
     [SerializeField] private GameObject panelWin;
 
-    [Header("Ручной поднабор")]
-    [SerializeField] private bool useManualSubset = false;
-    [SerializeField] private List<TeamDataCountry> manualSubset;
+    // --- Остальные твои переменные остаются ниже ---
 
-    // ======================== КОМАНДЫ / УРОВНИ ========================
+
+    [Header("Ручное добавление стран")]
+    [SerializeField] private bool useManualSubset = false;       // true — работать только с вручную выбранным списком
+    [SerializeField] private List<TeamDataCountry> manualSubset; // перетащи сюда нужные записи
+
+    // ----- КОМАНДЫ / УРОВНИ -----
     [Header("КОМАНДЫ / УРОВНИ")]
     [SerializeField] private TeamInformation teamInfo;
-    [SerializeField] private Text level;        // "Уровень N"
-    [SerializeField] private Text countAnswer;  // "N вопрос уровня"
+    [SerializeField] private Text level;                         // "Уровень N"
+    [SerializeField] private Text countAnswer;                   // "N вопрос уровня"
 
-    // ======================== UI ========================
+    // ----- UI -----
     [Header("UI")]
-    [SerializeField] private GameObject[] button;      // массив кнопок (Button + Text/TMP_Text)
-    [SerializeField] private Image targetImage;        // флаг
-    [SerializeField] private Text questionTypeText;    // надпись над вопросом
-    [SerializeField] private Text hintText;            // подсказка (Верно/Неверно)
-    [SerializeField] private Text timerText;           // текст таймера (секунды)
+    [SerializeField] private GameObject[] button;                // кнопки-ответы (каждая: Button + Text)
+    [SerializeField] private Image targetImage;                  // флаг
+    [SerializeField] private Text questionTypeText;              // подсказка над вопросом
+    [SerializeField] private Text hintText;                      // текстовая подсказка (Верно/Неверно/Время вышло)
+    [SerializeField] private Text timerText;                     // (опц.) отображение секунд таймера
+
+    [Header("Debug")]
+    [SerializeField] private Text debugText;
 
     [Header("Timer Arrow")]
-    [SerializeField] private RectTransform arrow;      // стрелка таймера
-    [SerializeField] private bool invertRotation = false;
+    [SerializeField] private RectTransform arrow;    // стрелка таймера (например, UI-изображение)
+    [SerializeField] private bool invertRotation = false; // если хочешь вращать в другую сторону
     [SerializeField] private AudioSource clock;
 
-    // ======================== ПОВЕДЕНИЕ ========================
+    // ----- ПОВЕДЕНИЕ -----
     [Header("ПОВЕДЕНИЕ")]
     [SerializeField] private LabelMode labelMode = LabelMode.Country; // синхронизируется с уровнем
-    [SerializeField] private bool randomFlags = false;                // случайный порядок или последовательный
-    [SerializeField] private bool autoNextAfterAnswer = false;        // переходить сразу после подсказки
+    [SerializeField] private bool randomFlags = false;           // брать записи случайно или по порядку
+    [SerializeField] private bool autoNextAfterAnswer = false;   // сразу переходить после подсказки (не используется, но оставлен для расширения)
 
-    // ======================== ПРОГРЕСС ========================
+    // ----- ПРОГРЕСС -----
     [Header("ПРОГРЕСС")]
-    [SerializeField] private int countIndex = 0;                      // индекс по пулу (для последовательного режима)
-    [SerializeField] private int countIndexLevel = 0;                 // оставшиеся вопросы на текущем уровне
-    [SerializeField] private int currentLevelNumber = 1;              // текущий уровень (1..4)
+    [SerializeField] private int countIndex = 0;                 // индекс по пулу (для последовательного режима)
+    [SerializeField] private int countIndexLevel = 0;            // оставшиеся вопросы на текущем уровне (устанавливается программно)
+    [SerializeField] private int currentLevelNumber = 1;         // текущий уровень (1..4)
 
-    // ======================== ЧИСЛО ВОПРОСОВ ========================
+    // ----- ЧИСЛО ВОПРОСОВ НА УРОВЕНЬ -----
     [Header("ЧИСЛО ВОПРОСОВ НА УРОВЕНЬ")]
-    [SerializeField] private int[] questionsPerLevel = new int[] { 20, 20, 20, 20 };
-    [SerializeField] private int defaultPerLevel = 20;
+    [SerializeField] private int[] questionsPerLevel = new int[] { 20, 20, 20, 20 }; // индекс 0 => уровень 1 и т.д.
+    [SerializeField] private int defaultPerLevel = 20;           // запасное значение, если элемент массива = 0/отриц.
 
-    // ======================== ОБРАТНАЯ СВЯЗЬ ========================
-    [Header("ОБРАТНАЯ СВЯЗЬ")]
-    [SerializeField] private bool showHints = true;
-    [SerializeField] private float hintSeconds = 1.2f;
-    [SerializeField] private bool colorizeButtons = true;
-    [SerializeField] private Color correctColor = new Color(0.3f, 0.85f, 0.3f);
-    [SerializeField] private Color wrongColor = new Color(0.95f, 0.35f, 0.35f);
+    // ----- ОБРАТНАЯ СВЯЗЬ -----
+    [Header("ОБРАТНАЯ СВЯЗЬ)")]
+    [SerializeField] private bool showHints = true;              // показывать текстовую подсказку
+    [SerializeField] private float hintSeconds = 1.5f;           // сколько секунд держать подсказку
+    [SerializeField] private bool colorizeButtons = true;        // подсветка кнопок
+    [SerializeField] private Color correctColor = new Color(0.3f, 0.85f, 0.3f); // зелёный
+    [SerializeField] private Color wrongColor = new Color(0.95f, 0.35f, 0.35f); // красный
 
-    // ======================== ТАЙМЕР ВОПРОСА ========================
+
+    // ----- ТАЙМЕР ВОПРОСА -----
     [Header("ТАЙМЕР ВОПРОСА")]
-    [SerializeField] private bool useQuestionTimer = false;
-    [SerializeField] private float questionSeconds = 10f;
-    [SerializeField] private bool showTimerUI = true;
+    [SerializeField] private bool useQuestionTimer = false;      // включить таймер вопроса
+    [SerializeField] private float questionSeconds = 10f;        // длительность таймера
+    [SerializeField] private bool showTimerUI = true;            // показывать текст таймера
 
-    // ======================== ФИНИШ ========================
+    // ----- ФИНИШ -----
     [Header("Finish")]
     [SerializeField] private string finishMessage = "Игра закончилась!";
-    public UnityEvent OnGameFinished;
+    public UnityEvent OnGameFinished;                            // событие конца игры (можно повесить окно/панель)
 
-    // ======================== RUNTIME ========================
-    [SerializeField] private string currentLabel = "";   // отладка
+    // ----- RUNTIME -----
+    [SerializeField] private string currentLabel = "";           // отладка: текущая "подпись"
     private List<TeamDataCountry> _pool = new List<TeamDataCountry>();
-    public TeamDataCountry _current;
-    public Text testText;
+    private TeamDataCountry _current;
     private System.Random _rng = new System.Random();
     private bool _inputLocked = false;
     private Coroutine _timerRoutine;
 
-    private readonly List<Button> _cachedButtons = new List<Button>();
-
-    private struct AnswerOption
+    // ======================== UNITY ЖИЗНЕННЫЙ ЦИКЛ ========================
+    private void Awake()
     {
-        public string display;
-        public bool isCorrect;
-        public AnswerOption(string d, bool ok) { display = d; isCorrect = ok; }
-    }
-    private List<AnswerOption> _currentAnswers = new List<AnswerOption>();
-    private int _currentCorrectIndex = -1;
-    private string _currentCorrectDisplay = "";
-
-    // ======================== UNITY: START/UPDATE ========================
-    private void Start()
-    {
-        Application.logMessageReceived += (cond, trace, type) =>
+        Debug_CheckEmptyCountries();
+        Debug_CheckMissingFlags();
+        // 1) ПРИОРИТЕТ: если countryList назначен в инспекторе — просто используем его
+        if (countryList != null)
         {
-            if (type == LogType.Exception && hintText)
-            {
-                hintText.text = "EX: " + cond;
-                hintText.gameObject.SetActive(true);
-            }
-        };
-
-        EnsureEventSystem();
-        EnsureGraphicRaycasters();
-        EnsureInputModuleCompatibility();
-        SafetyUnlockCanvasGroups();
-        SanitizeRaycastsSafely();
-
-        if (panelWin) panelWin.SetActive(false);
-        _inputLocked = false;
-        if (Time.timeScale == 0f) Time.timeScale = 1f;
-        Time.fixedDeltaTime = 0.02f;
-
-        CacheButtons();
-
-        // ВАЖНО: сначала пробуем подтянуть SO через Resources
-        EnsureCountryListLoaded();
-        RuntimeDataSelfTest();
-
-        //  Доп. диагностика
-        if (testText != null)
-        {
-            var fromField = countryList ? countryList.name : "NULL";
-            var total = (countryList != null && countryList.Countries != null) ? countryList.Countries.Count.ToString() : "NULL";
-
-            // сколько вообще таких SO есть в Resources
-            var all = Resources.LoadAll<TeamDataCountryListRU>("");
-            string allNames = string.Join(", ", all.Select(a => a.name));
-
-            testText.text =
-                $"SO(from field): {fromField}\n" +
-                $"Countries: {total}\n" +
-                $"Resources.All<TeamDataCountryListRU>: {all.Length} [{allNames}]";
+            int total = countryList.Countries != null ? countryList.Countries.Count : 0;
+            SetDebugMessage(
+                $"OK: countryList взят из инспектора.\n" +
+                $"Стран в списке: {total}"
+            );
+            return;
         }
 
+        // 2) Если в инспекторе не назначен — пробуем загрузить из Resources по строке
+        if (!string.IsNullOrEmpty(countryListResourcePath))
+        {
+            countryList = Resources.Load<CountriesDatabaseRU>(countryListResourcePath);
+        }
+
+        // 3) Диагностика: есть ли вообще такие SO в Resources
+        var allCountryLists = Resources.LoadAll<CountriesDatabaseRU>("");
+        SetDebugMessage($"DIAG: Найдено ScriptableObject TeamDataCountryListRU в Resources: {allCountryLists.Length} шт.");
+        for (int i = 0; i < allCountryLists.Length; i++)
+        {
+            var so = allCountryLists[i];
+            SetDebugMessage($"DIAG: SO[{i}] name = '{so.name}'");
+        }
+
+        // 4) Финальный статус
+        if (countryList == null)
+        {
+            SetDebugMessage(
+                "❌ ERROR: ScriptableObject TeamDataCountryListRU НЕ найден!\n" +
+                "countryList = null\n" +
+                $"Ожидался по пути: Resources/{countryListResourcePath}"
+            );
+        }
+        else
+        {
+            int total = countryList.Countries != null ? countryList.Countries.Count : 0;
+            SetDebugMessage(
+                "✔ OK: ScriptableObject TeamDataCountryListRU найден через Resources.\n" +
+                "countryList НЕ пустой.\n" +
+                $"Стран в списке: {total}"
+            );
+        }
+    }
+
+
+
+
+
+
+    /// <summary>
+    /// Пишет сообщение в debugText (если есть) и в консоль.
+    /// </summary>
+    private void SetDebugMessage(string msg)
+    {
+        string time = System.DateTime.Now.ToString("HH:mm:ss");
+        string entry = $"[{time}] {msg}";
+
+        if (debugText != null)
+            debugText.text += "\n" + entry;
+
+        Debug.Log("[QuisisFlag] " + entry);
+    }
+    /// <summary>
+    /// Проверка пустых стран и столиц.
+    /// </summary>
+    private void Debug_CheckEmptyCountries()
+    {
+        if (countryList == null || countryList.Countries == null)
+        {
+            SetDebugMessage("❌ Debug_CheckEmptyCountries: countryList = NULL");
+            return;
+        }
+
+        int emptyName = 0;
+        int emptyCapital = 0;
+
+        foreach (var c in countryList.Countries)
+        {
+            if (c == null)
+                continue;
+
+            if (string.IsNullOrWhiteSpace(c.nameCountry))
+            {
+                emptyName++;
+                SetDebugMessage($"⚠ Пустое имя страны! (capital='{c.capitalCountry}')");
+            }
+
+            if (string.IsNullOrWhiteSpace(c.capitalCountry))
+            {
+                emptyCapital++;
+                SetDebugMessage($"⚠ Пустая столица! (country='{c.nameCountry}')");
+            }
+        }
+
+        SetDebugMessage($"ИТОГ: Пустых имён стран: {emptyName}, пустых столиц: {emptyCapital}");
+    }
+    /// <summary>
+    /// Проверка стран без флага.
+    /// </summary>
+    private void Debug_CheckMissingFlags()
+    {
+        if (countryList == null || countryList.Countries == null)
+        {
+            SetDebugMessage("❌ Debug_CheckMissingFlags: countryList = NULL");
+            return;
+        }
+
+        int missingFlags = 0;
+
+        foreach (var c in countryList.Countries)
+        {
+            if (c == null)
+                continue;
+
+            if (c.flag == null)
+            {
+                missingFlags++;
+                SetDebugMessage($"⚠ Нет флага: {c.nameCountry}");
+            }
+        }
+
+        SetDebugMessage($"ИТОГ: Стран без флага: {missingFlags}");
+    }
+
+    private void Start()
+    {
+        if (panelWin != null)
+            panelWin.SetActive(false);
+
+        // Если countryList так и остался null – даже не пытаемся запускаться
+        if (countryList == null)
+        {
+            SetDebugMessage("CRITICAL: countryList = null в Start(). Инициализация викторины остановлена.");
+            enabled = false;
+            return;
+        }
+
+        // сброс индекса
         countIndex = 0;
+
+        // собираем пул
         BuildPool();
 
+        int poolCount = (_pool != null) ? _pool.Count : 0;
+        int buttonsCount = (button != null) ? button.Length : 0;
+
+        // Чёткий лог по состоянию на старт
+        SetDebugMessage(
+            "Инициализация викторины завершена.\n" +
+            $"Элементов в пуле стран: {poolCount}\n" +
+            $"Кнопок-ответов: {buttonsCount}\n" +
+            $"Текущий уровень: {currentLevelNumber}"
+        );
+
+        if (poolCount == 0)
+        {
+            SetDebugMessage("ERROR: Пул стран пуст после BuildPool(). Игра не может начаться.");
+            enabled = false;
+            return;
+        }
+
+        if (buttonsCount == 0)
+        {
+            SetDebugMessage("ERROR: Не назначены кнопки (button[] пуст). Игра не может начаться.");
+            enabled = false;
+            return;
+        }
+
+        // ограничиваем уровень
         currentLevelNumber = Mathf.Clamp(currentLevelNumber, 1, MaxLevel);
+
+        // режим по уровню
         ApplyLevelToMode(currentLevelNumber);
+
+        // количество вопросов
         countIndexLevel = GetQuestionsForLevel(currentLevelNumber);
 
+        // UI
         UpdateQuestionTypeText();
         UpdateLevelText();
 
         if (hintText) hintText.gameObject.SetActive(false);
         if (timerText) timerText.gameObject.SetActive(false);
 
-        if (_pool != null && _pool.Count > 0 && _cachedButtons.Count > 0) Next();
-        else Debug.LogWarning("[QuisisFlag] Пул пуст или нет кнопок — проверьте ссылки/ассеты.");
-
-        Debug.Log("EVENTSYSTEMS IN BUILD: " + FindObjectsOfType<EventSystem>().Length);
+        // первый вопрос
+        Next();
     }
+
+
+
+
 
     private void Update()
     {
         if (countAnswer != null)
-            countAnswer.text = $"{countIndexLevel} вопрос уровня";
+            countAnswer.text = $"{countIndexLevel.ToString()} вопрос уровня";
 
         if (_current != null)
             currentLabel = GetLabelForDebug(_current);
-        //if(testText !=  null)
-        //{
-        //    testText.text = _current.nameCountry.ToString() + " " + _current.capitalCountry.ToString();
-        //}
     }
 
-    // ======================== ПУБЛИЧНЫЕ КЛИКИ ========================
-    public void HandleButtonClick(int index)
+    // ======================== ПОСТРОЕНИЕ ПУЛА ========================
+
+    /// <summary>
+    /// Формирует пул стран для викторины.
+    /// Работает как с полным списком, так и с ручным поднабором manualSubset.
+    /// </summary>
+    private void BuildPool()
     {
-        if (_inputLocked) return;
-        if (index < 0 || index >= _currentAnswers.Count) return;
-
-        StopTimerIfAny();
-
-        bool isCorrect = _currentAnswers[index].isCorrect;
-
-        if (teamInfo != null)
+        // базовая проверка ассета
+        if (countryList == null || countryList.Countries == null || countryList.Countries.Count == 0)
         {
-            if (isCorrect) teamInfo.PointTeamPlus();
-            else teamInfo.PointTeamNoPlus();
+            _pool = new List<TeamDataCountry>();
+            Debug.LogWarning("[QuisisFlag] countryList пуст или не назначен.");
+            return;
         }
 
-        Dictionary<Button, Color> originals = new Dictionary<Button, Color>();
-        if (colorizeButtons)
+        // --- РУЧНОЙ ПОДНАБОР ---
+        if (useManualSubset && manualSubset != null && manualSubset.Count > 0)
         {
-            for (int i = 0; i < _cachedButtons.Count; i++)
-            {
-                var b = _cachedButtons[i];
-                if (!b) continue;
-                var cs = b.colors;
-                originals[b] = cs.normalColor;
-            }
+            // копируем список без сортировки, чтобы сохранить ПОРЯДОК как в инспекторе
+            _pool = new List<TeamDataCountry>(manualSubset.Where(c => c != null));
 
-            if (!isCorrect && index >= 0 && index < _cachedButtons.Count)
-            {
-                var clicked = _cachedButtons[index];
-                if (clicked)
-                {
-                    var c = clicked.colors;
-                    c.normalColor = wrongColor;
-                    c.selectedColor = wrongColor;
-                    c.highlightedColor = wrongColor;
-                    clicked.colors = c;
-                }
-            }
+            // не удаляем дубликаты и не применяем Distinct, чтобы не нарушать порядок
+            // только фильтрация по флагам (если включена)
+            if (onlyWithFlags)
+                _pool = _pool.Where(c => c.flag != null).ToList();
 
-            if (_currentCorrectIndex >= 0 && _currentCorrectIndex < _cachedButtons.Count)
-            {
-                var correctBtn = _cachedButtons[_currentCorrectIndex];
-                if (correctBtn)
-                {
-                    var c = correctBtn.colors;
-                    c.normalColor = correctColor;
-                    c.selectedColor = correctColor;
-                    c.highlightedColor = correctColor;
-                    correctBtn.colors = c;
-                }
-            }
+            // если после фильтрации ничего не осталось
+            if (_pool.Count == 0)
+                Debug.LogWarning("[QuisisFlag] Manual Subset пуст после фильтрации (проверь наличие флагов).");
+
+            // всегда начинаем с нуля при ручном поднаборе
+            countIndex = 0;
+            return;
         }
 
-        if (showHints && hintText)
-        {
-            hintText.text = isCorrect ? "Верно!" : $"Неверно. Правильно: {_currentCorrectDisplay}";
-            hintText.gameObject.SetActive(true);
-        }
+        // --- ПОЛНЫЙ ПУЛ ---
+        _pool = onlyWithFlags
+            ? countryList.Countries.Where(c => c.flag != null).ToList()
+            : countryList.Countries.ToList();
 
-        StartCoroutine(AfterAnswerRoutine(originals));
+        if (_pool.Count == 0)
+            _pool = countryList.Countries.ToList();
+
+        // фильтр по заполненным данным (страна/столица)
+        _pool = _pool.Where(HasNeededDataForAnyMode).ToList();
+
+        if (_pool.Count == 0)
+            Debug.LogWarning("[QuisisFlag] Пул записей пуст после фильтрации.");
+
+        // сбрасываем индекс для корректного старта
+        countIndex = 0;
     }
 
-    private IEnumerator AfterAnswerRoutine(Dictionary<Button, Color> originals)
+
+    private void OnValidate()
     {
-        _inputLocked = true;
-
-        float wait = Mathf.Max(0f, showHints ? hintSeconds : 0f);
-        if (wait > 0f) yield return new WaitForSeconds(wait);
-
-        if (hintText) hintText.gameObject.SetActive(false);
-
-        if (colorizeButtons)
+        if (manualSubset != null)
         {
-            foreach (var kv in originals)
-            {
-                var b = kv.Key; if (!b) continue;
-                var c = b.colors;
-                c.normalColor = kv.Value;
-                c.selectedColor = kv.Value;
-                c.highlightedColor = kv.Value;
-                b.colors = c;
-            }
+            manualSubset = manualSubset.Where(c => c != null).ToList();
+            var seen = new HashSet<TeamDataCountry>();
+            var cleaned = new List<TeamDataCountry>();
+            foreach (var c in manualSubset)
+                if (seen.Add(c)) cleaned.Add(c);
+            manualSubset = cleaned;
         }
 
-        _inputLocked = false;
-        DecrementAndMaybeAdvanceLevel();
+        // нормализуем настройки количества вопросов
+        if (questionsPerLevel != null)
+        {
+            for (int i = 0; i < questionsPerLevel.Length; i++)
+                if (questionsPerLevel[i] < 0) questionsPerLevel[i] = 0; // 0 => возьмём defaultPerLevel
+        }
+        if (defaultPerLevel < 1) defaultPerLevel = 1;
     }
 
-    // ======================== ОСНОВНОЙ ЦИКЛ ========================
+    // ======================== ОСНОВНОЙ ЦИКЛ ВОПРОСОВ ========================
+
     public void Next()
     {
-        if (_pool == null || _pool.Count == 0 || _cachedButtons.Count == 0)
+        SetDebugMessage($"Next(): level={currentLevelNumber}, remaining={countIndexLevel}");
+
+        if (_pool == null || _pool.Count == 0 || button == null || button.Length == 0)
             return;
 
         StopTimerIfAny();
         _inputLocked = false;
         if (hintText) hintText.gameObject.SetActive(false);
 
+        // выбрать текущий элемент
         _current = randomFlags ? _pool[_rng.Next(_pool.Count)] : _pool[countIndex % _pool.Count];
 
+        // отрисовать вопрос
         RenderCurrentQuestion();
 
+        // шаг по индексу (для последовательного режима)
         if (!randomFlags)
             countIndex = (countIndex + 1) % _pool.Count;
 
+        // запустить таймер (если включён)
         StartTimerIfEnabled();
     }
 
@@ -308,8 +429,10 @@ public class QuisisFlag : MonoBehaviour
                 UpdateLevelText();
                 UpdateQuestionTypeText();
 
+                // сбросить счётчик на значение для нового уровня
                 countIndexLevel = GetQuestionsForLevel(currentLevelNumber);
 
+                // мгновенно обновить вопрос под новый режим/уровень
                 _current = randomFlags ? _pool[_rng.Next(_pool.Count)] : _pool[countIndex % _pool.Count];
                 RenderCurrentQuestion();
                 StartTimerIfEnabled();
@@ -326,194 +449,342 @@ public class QuisisFlag : MonoBehaviour
     }
 
     // ======================== ОТРИСОВКА ВОПРОСА ========================
+
     private void RenderCurrentQuestion()
     {
         if (_current == null) return;
 
-        // --- ФЛАГ (автоподхват: ручной -> GetFlag)
-        Sprite sprite = _current.flag ?? countryList?.GetFlag(_current.nameCountry);
         if (targetImage != null)
         {
-            targetImage.sprite = sprite;
-            targetImage.enabled = (sprite != null);
+            targetImage.sprite = _current.flag;
+            targetImage.enabled = (_current.flag != null);
         }
 
         switch (labelMode)
         {
             case LabelMode.Country:
-                if (questionTypeText) questionTypeText.text = "Выберите страну";
-                break;
             case LabelMode.Capital:
-                if (questionTypeText) questionTypeText.text = "Выберите столицу";
+                RenderSimpleCountryOrCapital();
                 break;
             case LabelMode.CountryWithCapital:
-                if (questionTypeText) questionTypeText.text = $"Столица страны: {_current.nameCountry}";
+                RenderCountryWithCapitalMixed();
                 break;
             case LabelMode.CapitalWithCountry:
-                if (questionTypeText) questionTypeText.text = $"Страна со столицей: {_current.capitalCountry}";
+                RenderCapitalWithCountryMixed();
                 break;
-        }
-
-        _currentAnswers = GenerateAnswers(_current, out _currentCorrectIndex);
-        _currentCorrectDisplay = (_currentAnswers.FirstOrDefault(a => a.isCorrect).display) ?? "";
-
-        for (int i = 0; i < _cachedButtons.Count; i++)
-        {
-            var btn = _cachedButtons[i];
-            if (!btn) continue;
-
-            string label = (i < _currentAnswers.Count) ? _currentAnswers[i].display : "";
-
-#if TMP_PRESENT || TEXTMESHPRO
-            var tmp = btn.GetComponentInChildren<TMP_Text>(true);
-            if (tmp) { tmp.text = label; goto NextButton; }
-#endif
-            var legacy = btn.GetComponentInChildren<Text>(true);
-            if (legacy) legacy.text = label;
-
-            NextButton:;
-            if (!btn.interactable) btn.interactable = true;
         }
     }
 
-    private List<AnswerOption> GenerateAnswers(TeamDataCountry current, out int correctIndex)
+    private void RenderSimpleCountryOrCapital()
     {
-        correctIndex = -1;
-        var result = new List<AnswerOption>(_cachedButtons.Count);
-        if (current == null || _pool == null || _pool.Count == 0 || _cachedButtons.Count == 0)
-            return result;
-
-        int need = _cachedButtons.Count;
-
-        string correctDisplay;
-        List<string> candidates = new List<string>(Mathf.Max(need * 3, 16));
-
-        switch (labelMode)
+        string correctText = GetLabelByMode(_current, labelMode);
+        if (string.IsNullOrEmpty(correctText))
         {
-            case LabelMode.Country:
-            case LabelMode.Capital:
-                {
-                    correctDisplay = GetLabelByMode(current, labelMode);
-                    foreach (var c in _pool)
-                    {
-                        if (c == null) continue;
-                        var label = GetLabelByMode(c, labelMode);
-                        if (!string.IsNullOrEmpty(label)) candidates.Add(label);
-                    }
-                    break;
-                }
-            case LabelMode.CountryWithCapital:
-                {
-                    if (string.IsNullOrEmpty(current.nameCountry) || string.IsNullOrEmpty(current.capitalCountry))
-                        return result;
-
-                    correctDisplay = ComposeCountryCapital(current.nameCountry, current.capitalCountry);
-
-                    var capitals = _pool
-                        .Where(c => c != null && !string.IsNullOrEmpty(c.capitalCountry) &&
-                                    !string.Equals(c.capitalCountry, current.capitalCountry, StringComparison.OrdinalIgnoreCase))
-                        .Select(c => ComposeCountryCapital(current.nameCountry, c.capitalCountry));
-
-                    candidates.AddRange(capitals);
-                    break;
-                }
-            case LabelMode.CapitalWithCountry:
-                {
-                    if (string.IsNullOrEmpty(current.nameCountry) || string.IsNullOrEmpty(current.capitalCountry))
-                        return result;
-
-                    correctDisplay = ComposeCountryCapital(current.nameCountry, current.capitalCountry);
-
-                    var countries = _pool
-                        .Where(c => c != null && !string.IsNullOrEmpty(c.nameCountry) &&
-                                    !string.Equals(c.nameCountry, current.nameCountry, StringComparison.OrdinalIgnoreCase))
-                        .Select(c => ComposeCountryCapital(c.nameCountry, current.capitalCountry));
-
-                    candidates.AddRange(countries);
-                    break;
-                }
-            default:
-                correctDisplay = "";
-                break;
+            Debug.LogWarning("[QuisisFlag] Не удалось получить корректный текст ответа.");
+            return;
         }
 
-        if (string.IsNullOrEmpty(correctDisplay))
-            return result;
+        int correctIndex = Random.Range(0, button.Length);
+        var used = new HashSet<string>(System.StringComparer.OrdinalIgnoreCase) { correctText };
 
-        var uniq = new HashSet<string>(StringComparer.OrdinalIgnoreCase) { correctDisplay };
+        Button correctBtn = null;
+        var allButtons = new List<Button>(button.Length);
 
-        Shuffle(candidates);
-        foreach (var cand in candidates)
+        for (int i = 0; i < button.Length; i++)
         {
-            if (uniq.Count >= need) break;
-            if (string.IsNullOrEmpty(cand)) continue;
-            if (uniq.Add(cand)) { }
-        }
+            var btnGO = button[i];
+            if (!btnGO) continue;
 
-        if (uniq.Count < need)
-        {
-            foreach (var c in _pool)
+            var btn = btnGO.GetComponent<Button>();
+            var txt = btnGO.GetComponentInChildren<Text>(true);
+            if (btn == null) continue;
+
+            allButtons.Add(btn);
+            btn.onClick.RemoveAllListeners();
+
+            if (i == correctIndex)
             {
-                if (uniq.Count >= need) break;
-                if (c == null) continue;
+                correctBtn = btn;
+                if (txt) txt.text = correctText;
 
-                string add;
-                if (labelMode == LabelMode.Country || labelMode == LabelMode.Capital)
-                    add = GetLabelByMode(c, labelMode);
-                else
-                    add = ComposeCountryCapital(c.nameCountry, c.capitalCountry);
+                btn.onClick.AddListener(() =>
+                {
+                    if (_inputLocked) return;
+                    StopTimerIfAny();
+                    OnAnswerSelected(
+                        isCorrect: true,
+                        correctDisplay: BuildCorrectDisplayForMode(_current, labelMode),
+                        clickedButton: btn,
+                        correctButton: correctBtn,
+                        allButtons: allButtons
+                    );
+                });
+            }
+            else
+            {
+                // дистрактор
+                string randomLabel;
+                int safety = 0;
+                do
+                {
+                    var rndItem = _pool[_rng.Next(_pool.Count)];
+                    randomLabel = GetLabelByMode(rndItem, labelMode);
+                    safety++;
+                    if (safety > 2000) break;
+                } while (string.IsNullOrEmpty(randomLabel) || used.Contains(randomLabel));
 
-                if (!string.IsNullOrEmpty(add)) uniq.Add(add);
+                used.Add(randomLabel);
+                if (txt) txt.text = randomLabel;
+
+                btn.onClick.AddListener(() =>
+                {
+                    if (_inputLocked) return;
+                    StopTimerIfAny();
+                    OnAnswerSelected(
+                        isCorrect: false,
+                        correctDisplay: BuildCorrectDisplayForMode(_current, labelMode),
+                        clickedButton: btn,
+                        correctButton: correctBtn,
+                        allButtons: allButtons
+                    );
+                });
+            }
+        }
+    }
+
+    private void RenderCountryWithCapitalMixed()
+    {
+        string country = _current?.nameCountry;
+        string correctCapital = _current?.capitalCountry;
+        if (string.IsNullOrEmpty(country) || string.IsNullOrEmpty(correctCapital))
+        {
+            Debug.LogWarning("[QuisisFlag] Для режима CountryWithCapital требуется и страна, и столица.");
+            return;
+        }
+
+        int correctIndex = Random.Range(0, button.Length);
+
+        var candidateCapitals = _pool
+            .Where(c => !string.IsNullOrEmpty(c.capitalCountry) &&
+                        !string.Equals(c.capitalCountry, correctCapital, System.StringComparison.OrdinalIgnoreCase))
+            .Select(c => c.capitalCountry)
+            .Distinct(System.StringComparer.OrdinalIgnoreCase)
+            .ToList();
+
+        Shuffle(candidateCapitals);
+        var distractorCapitals = TakeDistinct(candidateCapitals, button.Length - 1);
+        while (distractorCapitals.Count < button.Length - 1 && candidateCapitals.Count > 0)
+            distractorCapitals.Add(candidateCapitals[_rng.Next(candidateCapitals.Count)]);
+
+        int di = 0;
+        Button correctBtn = null;
+        var allButtons = new List<Button>(button.Length);
+
+        for (int i = 0; i < button.Length; i++)
+        {
+            var btnGO = button[i]; if (!btnGO) continue;
+            var btn = btnGO.GetComponent<Button>(); if (btn == null) continue;
+            var txt = btnGO.GetComponentInChildren<Text>(true);
+
+            allButtons.Add(btn);
+            btn.onClick.RemoveAllListeners();
+
+            if (i == correctIndex)
+            {
+                correctBtn = btn;
+                if (txt) txt.text = ComposeCountryCapital(country, correctCapital);
+                btn.onClick.AddListener(() =>
+                {
+                    if (_inputLocked) return;
+                    StopTimerIfAny();
+                    OnAnswerSelected(true, ComposeCountryCapital(country, correctCapital), btn, correctBtn, allButtons);
+                });
+            }
+            else
+            {
+                string wrongCapital = (di < distractorCapitals.Count) ? distractorCapitals[di++] : correctCapital;
+                if (txt) txt.text = ComposeCountryCapital(country, wrongCapital);
+                btn.onClick.AddListener(() =>
+                {
+                    if (_inputLocked) return;
+                    StopTimerIfAny();
+                    OnAnswerSelected(false, ComposeCountryCapital(country, correctCapital), btn, correctBtn, allButtons);
+                });
+            }
+        }
+    }
+
+    private void RenderCapitalWithCountryMixed()
+    {
+        string correctCountry = _current?.nameCountry;
+        string capital = _current?.capitalCountry;
+        if (string.IsNullOrEmpty(correctCountry) || string.IsNullOrEmpty(capital))
+        {
+            Debug.LogWarning("[QuisisFlag] Для режима CapitalWithCountry требуется и страна, и столица.");
+            return;
+        }
+
+        int correctIndex = Random.Range(0, button.Length);
+
+        var candidateCountries = _pool
+            .Where(c => !string.IsNullOrEmpty(c.nameCountry) &&
+                        !string.Equals(c.nameCountry, correctCountry, System.StringComparison.OrdinalIgnoreCase))
+            .Select(c => c.nameCountry)
+            .Distinct(System.StringComparer.OrdinalIgnoreCase)
+            .ToList();
+
+        Shuffle(candidateCountries);
+        var distractorCountries = TakeDistinct(candidateCountries, button.Length - 1);
+        while (distractorCountries.Count < button.Length - 1 && candidateCountries.Count > 0)
+            distractorCountries.Add(candidateCountries[_rng.Next(candidateCountries.Count)]);
+
+        int di = 0;
+        Button correctBtn = null;
+        var allButtons = new List<Button>(button.Length);
+
+        for (int i = 0; i < button.Length; i++)
+        {
+            var btnGO = button[i]; if (!btnGO) continue;
+            var btn = btnGO.GetComponent<Button>(); if (btn == null) continue;
+            var txt = btnGO.GetComponentInChildren<Text>(true);
+
+            allButtons.Add(btn);
+            btn.onClick.RemoveAllListeners();
+
+            if (i == correctIndex)
+            {
+                correctBtn = btn;
+                if (txt) txt.text = ComposeCountryCapital(correctCountry, capital);
+                btn.onClick.AddListener(() =>
+                {
+                    if (_inputLocked) return;
+                    StopTimerIfAny();
+                    OnAnswerSelected(true, ComposeCountryCapital(correctCountry, capital), btn, correctBtn, allButtons);
+                });
+            }
+            else
+            {
+                string wrongCountry = (di < distractorCountries.Count) ? distractorCountries[di++] : correctCountry;
+                if (txt) txt.text = ComposeCountryCapital(wrongCountry, capital);
+                btn.onClick.AddListener(() =>
+                {
+                    if (_inputLocked) return;
+                    StopTimerIfAny();
+                    OnAnswerSelected(false, ComposeCountryCapital(correctCountry, capital), btn, correctBtn, allButtons);
+                });
+            }
+        }
+    }
+
+    // ======================== ОТВЕТ/ПОДСКАЗКИ/ПЕРЕХОД ========================
+
+    private void OnAnswerSelected(bool isCorrect, string correctDisplay, Button clickedButton, Button correctButton, List<Button> allButtons)
+    {
+        _inputLocked = true;
+
+        // очки команде
+        if (teamInfo != null)
+        {
+            if (isCorrect) teamInfo.PointTeamPlus();
+            else teamInfo.PointTeamNoPlus();
+        }
+
+        // подсветка кнопок
+        var originals = new Dictionary<Button, Color>();
+        if (colorizeButtons)
+        {
+            foreach (var b in allButtons)
+            {
+                var colors = b.colors;
+                originals[b] = colors.normalColor;
+            }
+
+            if (!isCorrect && clickedButton)
+            {
+                var c = clickedButton.colors;
+                c.normalColor = wrongColor;
+                c.selectedColor = wrongColor;
+                c.highlightedColor = wrongColor;
+                clickedButton.colors = c;
+            }
+
+            if (correctButton)
+            {
+                var c = correctButton.colors;
+                c.normalColor = correctColor;
+                c.selectedColor = correctColor;
+                c.highlightedColor = correctColor;
+                correctButton.colors = c;
             }
         }
 
-        var all = new List<string>(uniq);
-        Shuffle(all);
-        if (all.Count > need) all.RemoveRange(need, all.Count - need);
-        while (all.Count < need) all.Add(correctDisplay);
-
-        for (int i = 0; i < all.Count; i++)
+        // текстовая подсказка
+        if (showHints && hintText)
         {
-            bool ok = string.Equals(all[i], correctDisplay, StringComparison.OrdinalIgnoreCase);
-            result.Add(new AnswerOption(all[i], ok));
-            if (ok) correctIndex = i;
+            hintText.text = isCorrect ? "Верно!" : $"Неверно. Правильно: {correctDisplay}";
+            hintText.gameObject.SetActive(true);
         }
 
-        if (correctIndex < 0 && result.Count > 0)
-        {
-            result[0] = new AnswerOption(correctDisplay, true);
-            correctIndex = 0;
-        }
-
-        return result;
+        // подождать hintSeconds и перейти дальше/вернуть цвета
+        StartCoroutine(AfterAnswerRoutine(originals));
     }
 
-    // ======================== ТАЙМЕР ========================
+    private IEnumerator AfterAnswerRoutine(Dictionary<Button, Color> originals)
+    {
+        float wait = Mathf.Max(0f, showHints ? hintSeconds : 0f);
+        if (wait > 0f) yield return new WaitForSeconds(wait);
+
+        if (hintText) hintText.gameObject.SetActive(false);
+
+        if (colorizeButtons)
+        {
+            foreach (var kv in originals)
+            {
+                var b = kv.Key; if (!b) continue;
+                var c = b.colors;
+                c.normalColor = kv.Value;
+                c.selectedColor = kv.Value;
+                c.highlightedColor = kv.Value;
+                b.colors = c;
+            }
+        }
+
+        _inputLocked = false;
+
+        // уменьшить счётчик вопросов и, если надо, повысить уровень/завершить игру
+        DecrementAndMaybeAdvanceLevel();
+    }
+
+    // ======================== ТАЙМЕР ВОПРОСА ========================
+
     public void UseQuestionTimer()
     {
         useQuestionTimer = !useQuestionTimer;
         if (useQuestionTimer)
         {
-            if (clock != null) clock.Play();
+            if (clock != null) { clock.Play(); }
             StartTimerIfEnabled();
         }
         else
         {
-            if (clock != null) clock.Stop();
+            if (clock != null) { clock.Stop(); }
             StopTimerIfAny();
         }
     }
 
-    private void StartTimerIfEnabled()
+    public void StartTimerIfEnabled()
     {
         if (!useQuestionTimer) return;
 
         StopTimerIfAny();
-        if (showTimerUI && timerText) timerText.gameObject.SetActive(true);
+
+        if (showTimerUI && timerText)
+            timerText.gameObject.SetActive(true);
+
         _timerRoutine = StartCoroutine(QuestionTimerRoutine(questionSeconds));
     }
 
-    private void StopTimerIfAny()
+    public void StopTimerIfAny()
     {
         if (_timerRoutine != null)
         {
@@ -524,62 +795,89 @@ public class QuisisFlag : MonoBehaviour
         ResetArrowRotation();
     }
 
+    /// <summary>
+    /// Вращает стрелку во время активного отсчёта таймера.
+    /// Делает один полный оборот (360°) за секунду.
+    /// </summary>
+    private void RotateArrowDuringTimer(float elapsedTime, float totalTime)
+    {
+        if (arrow == null) return;
+
+        if (totalTime <= 0f)
+        {
+            ResetArrowRotation();
+            return;
+        }
+
+        // вычисляем прогресс текущей секунды (0..1)
+        float cycleProgress = (elapsedTime % 1f); // каждый оборот = 1 секунда
+        float angle = (invertRotation ? 360f : -360f) * cycleProgress;
+
+        // применяем поворот по оси Z
+        arrow.localRotation = Quaternion.Euler(0f, 0f, angle);
+    }
+
+    /// <summary>
+    /// Сбрасывает стрелку в исходное положение (0° по Z)
+    /// </summary>
+    private void ResetArrowRotation()
+    {
+        if (arrow != null)
+            arrow.localRotation = Quaternion.identity;
+    }
+
     private IEnumerator QuestionTimerRoutine(float seconds)
     {
-        if (clock != null) clock.Play();
-
+        if (clock != null) { clock.Play(); }
         float t = Mathf.Max(0.01f, seconds);
         while (t > 0f && !_inputLocked)
         {
             if (showTimerUI && timerText)
                 timerText.text = Mathf.CeilToInt(t).ToString();
 
+            // --- ВРАЩЕНИЕ СТРЕЛКИ ---
             float elapsed = seconds - t;
             RotateArrowDuringTimer(elapsed, seconds);
+            // -------------------------
 
             yield return null;
             t -= Time.deltaTime;
         }
-
         ResetArrowRotation();
+        if (_inputLocked) yield break; // уже ответили
 
-        if (_inputLocked) yield break;
-
+        // время вышло — считаем неверным
         _inputLocked = true;
-        if (clock != null) clock.Stop();
+        if (clock != null) { clock.Stop(); }
+        Button correctButton = FindCorrectButtonForCurrentMode(out string correctDisplay);
+        var allButtons = CollectAllButtons();
+        var originals = new Dictionary<Button, Color>();
 
-        Dictionary<Button, Color> originals = new Dictionary<Button, Color>();
         if (colorizeButtons)
         {
-            for (int i = 0; i < _cachedButtons.Count; i++)
+            foreach (var b in allButtons)
             {
-                var b = _cachedButtons[i];
-                if (!b) continue;
-                var cs = b.colors;
-                originals[b] = cs.normalColor;
+                var colors = b.colors;
+                originals[b] = colors.normalColor;
             }
 
-            if (_currentCorrectIndex >= 0 && _currentCorrectIndex < _cachedButtons.Count)
+            if (correctButton)
             {
-                var correctBtn = _cachedButtons[_currentCorrectIndex];
-                if (correctBtn)
-                {
-                    var c = correctBtn.colors;
-                    c.normalColor = correctColor;
-                    c.selectedColor = correctColor;
-                    c.highlightedColor = correctColor;
-                    correctBtn.colors = c;
-                }
+                var c = correctButton.colors;
+                c.normalColor = correctColor;
+                c.selectedColor = correctColor;
+                c.highlightedColor = correctColor;
+                correctButton.colors = c;
             }
         }
 
         if (showHints && hintText)
         {
-            hintText.text = $"Время вышло. Правильно: {_currentCorrectDisplay}";
+            hintText.text = $"Время вышло. Правильно: {correctDisplay}";
             hintText.gameObject.SetActive(true);
         }
 
-        if (teamInfo != null) teamInfo.PointTeamNoPlus();
+        if (teamInfo != null) teamInfo.PointTeamNoPlus(); // штраф как за неверный
 
         float wait = Mathf.Max(0f, showHints ? hintSeconds : 0f);
         if (wait > 0f) yield return new WaitForSeconds(wait);
@@ -603,273 +901,51 @@ public class QuisisFlag : MonoBehaviour
         DecrementAndMaybeAdvanceLevel();
     }
 
-    private void RotateArrowDuringTimer(float elapsedTime, float totalTime)
-    {
-        if (arrow == null) return;
-        if (totalTime <= 0f) { ResetArrowRotation(); return; }
+    // ======================== ПОИСК КНОПКИ/СПИСКИ КНОПОК ========================
 
-        float cycleProgress = (elapsedTime % 1f);       // 1 оборот в секунду
-        float angle = (invertRotation ? 360f : -360f) * cycleProgress;
-        arrow.localRotation = Quaternion.Euler(0f, 0f, angle);
-    }
-
-    private void ResetArrowRotation()
+    private Button FindCorrectButtonForCurrentMode(out string correctDisplay)
     {
-        if (arrow != null)
-            arrow.localRotation = Quaternion.identity;
-    }
+        correctDisplay = BuildCorrectDisplayForMode(_current, labelMode);
 
-    // ======================== ПОМОЩНИКИ UI/ВВОД ========================
-    private void EnsureEventSystem()
-    {
-        if (EventSystem.current != null) return;
-        var esGO = new GameObject("EventSystem", typeof(EventSystem));
-        AddInputModuleSafely(esGO);
-        Debug.Log("[QuisisFlag] EventSystem был отсутствующим и создан автоматически.");
-    }
-
-    private void AddInputModuleSafely(GameObject esGO)
-    {
-        var newType = System.Type.GetType("UnityEngine.InputSystem.UI.InputSystemUIInputModule, Unity.InputSystem");
-        if (newType != null)
+        foreach (var go in button)
         {
-            esGO.AddComponent(newType);
-            return;
-        }
-        if (esGO.GetComponent<StandaloneInputModule>() == null)
-            esGO.AddComponent<StandaloneInputModule>();
-    }
+            if (!go) continue;
+            var txt = go.GetComponentInChildren<Text>(true);
+            var btn = go.GetComponent<Button>();
+            if (!btn || !txt) continue;
 
-    private void EnsureGraphicRaycasters()
-    {
-        var canvases = Resources.FindObjectsOfTypeAll<Canvas>();
-        foreach (var c in canvases)
-        {
-            if (c == null) continue;
-
-            if (!c.TryGetComponent<GraphicRaycaster>(out var _))
-                c.gameObject.AddComponent<GraphicRaycaster>();
-
-            if (c.renderMode == RenderMode.ScreenSpaceCamera && c.worldCamera == null)
+            if (labelMode == LabelMode.Country || labelMode == LabelMode.Capital)
             {
-                var cam = Camera.main;
-                if (cam != null)
-                {
-                    c.worldCamera = cam;
-                    if (c.planeDistance <= 0f) c.planeDistance = 1f;
-                    Debug.Log($"[QuisisFlag] Assigned worldCamera to Canvas: {c.name}");
-                }
+                if (txt.text == GetLabelByMode(_current, labelMode))
+                    return btn;
+            }
+            else
+            {
+                if (txt.text == correctDisplay)
+                    return btn;
             }
         }
+        return null;
     }
 
-    private void EnsureInputModuleCompatibility()
+    private List<Button> CollectAllButtons()
     {
-        var es = EventSystem.current;
-        if (es == null) return;
-
-        var newType = System.Type.GetType("UnityEngine.InputSystem.UI.InputSystemUIInputModule, Unity.InputSystem");
-        var hasNew = (newType != null && es.GetComponent(newType) != null);
-
-        var sim = es.GetComponent<StandaloneInputModule>();
-        if (sim == null) sim = es.gameObject.AddComponent<StandaloneInputModule>();
-        sim.forceModuleActive = true;
-
-        Debug.Log($"[QuisisFlag] Input modules: new={hasNew}, standalone={(sim != null)} (force={sim.forceModuleActive})");
-    }
-
-    private void SafetyUnlockCanvasGroups()
-    {
-        var groups = Resources.FindObjectsOfTypeAll<CanvasGroup>();
-        foreach (var g in groups)
-        {
-            if (g == null) continue;
-            if (!g.gameObject.scene.IsValid()) continue;
-            if (!g.gameObject.activeInHierarchy) continue;
-
-            if (!g.interactable || !g.blocksRaycasts)
-            {
-                g.interactable = true;
-                g.blocksRaycasts = true;
-            }
-        }
-    }
-
-    private void SanitizeRaycastsSafely()
-    {
-        var graphics = Resources.FindObjectsOfTypeAll<Graphic>();
-        foreach (var gr in graphics)
-        {
-            if (gr == null) continue;
-            if (!gr.gameObject.scene.IsValid()) continue;
-            if (!gr.gameObject.activeInHierarchy) continue;
-
-            if (gr is Image img && img.raycastTarget && img.GetComponent<Button>() == null)
-                img.raycastTarget = false;
-        }
-    }
-
-    private void CacheButtons()
-    {
-        _cachedButtons.Clear();
-        if (button == null) return;
+        var list = new List<Button>();
         foreach (var go in button)
         {
             if (!go) continue;
             var b = go.GetComponent<Button>();
-            if (b) _cachedButtons.Add(b);
+            if (b) list.Add(b);
         }
+        return list;
     }
 
-    // ======================== ПОСТРОЕНИЕ ПУЛА ========================
-    private void BuildPool()
-    {
-        // 1) проверяем SO
-        if (countryList == null)
-        {
-            Debug.LogWarning("[QuisisFlag][BuildPool] countryList == NULL → пробуем Resources.Load в двух местах");
-            var loaded = Resources.Load<TeamDataCountryListRU>("TeamDataCountryListRU")
-                      ?? Resources.Load<TeamDataCountryListRU>("Data/TeamDataCountryListRU");
-            if (loaded != null)
-            {
-                countryList = loaded;
-                Debug.Log("[QuisisFlag][BuildPool] ScriptableObject найден через Resources → OK");
-            }
-            else
-            {
-                Debug.LogError("[QuisisFlag][BuildPool] Не нашли SO в Resources → создаём временные STUB-данные");
-                _pool = new List<TeamDataCountry>()
-                {
-                    new TeamDataCountry { nameCountry="тут 1", capitalCountry="Cap1" },
-                    new TeamDataCountry { nameCountry="Stub2", capitalCountry="Cap2" },
-                    new TeamDataCountry { nameCountry="Stub3", capitalCountry="Cap3" },
-                    new TeamDataCountry { nameCountry="Stub4", capitalCountry="Cap4" },
-                };
-                countIndex = 0;
-                return;
-            }
-        }
+    // ======================== ХЕЛПЕРЫ ФОРМАТА/ТЕКСТА/ФИЛЬТРОВ ========================
 
-        // 2) ручной поднабор
-        if (useManualSubset && manualSubset != null && manualSubset.Count > 0)
-        {
-            _pool = manualSubset.Where(c => c != null).ToList();
-
-            if (onlyWithFlags)
-                _pool = _pool.Where(c => (c.flag != null) || (countryList.GetFlag(c.nameCountry) != null)).ToList();
-
-            if (_pool.Count == 0)
-                Debug.LogWarning("[QuisisFlag][BuildPool] manualSubset пуст после фильтрации.");
-
-            countIndex = 0;
-            return;
-        }
-
-        // 3) основной пул из SO
-        if (countryList.Countries == null || countryList.Countries.Count == 0)
-        {
-            Debug.LogError("[QuisisFlag][BuildPool] countryList.Countries пуст! Создаём временные данные.");
-            _pool = new List<TeamDataCountry>()
-            {
-                new TeamDataCountry { nameCountry="тут 2", capitalCountry="Cap1" },
-                new TeamDataCountry { nameCountry="Dummy2", capitalCountry="Cap2" },
-            };
-            return;
-        }
-
-        _pool = countryList.Countries.Where(c => c != null).ToList();
-
-        if (onlyWithFlags)
-        {
-            _pool = _pool.Where(c => (c.flag != null) || (countryList.GetFlag(c.nameCountry) != null)).ToList();
-
-            if (_pool.Count == 0)
-            {
-                Debug.LogWarning("[QuisisFlag][BuildPool] После onlyWithFlags список пуст → откатываемся к полному списку.");
-                _pool = countryList.Countries.Where(c => c != null).ToList();
-                onlyWithFlags = false;
-            }
-        }
-
-        _pool = _pool.Where(HasNeededDataForAnyMode).ToList();
-        if (_pool.Count == 0)
-        {
-            Debug.LogError("[QuisisFlag][BuildPool] После фильтрации список пуст → создаём временные данные.");
-            _pool = new List<TeamDataCountry>()
-            {
-                new TeamDataCountry { nameCountry="Тут3", capitalCountry="CapA" },
-                new TeamDataCountry { nameCountry="DummyB", capitalCountry="CapB" },
-            };
-        }
-
-        countIndex = 0;
-        Debug.Log($"[QuisisFlag][BuildPool] Пул сформирован: {_pool.Count} записей. onlyWithFlags={onlyWithFlags}");
-    }
-
-    private void EnsureCountryListLoaded()
-    {
-        if (countryList != null) return;
-
-        // Пробуем оба пути
-        countryList = Resources.Load<TeamDataCountryListRU>("TeamDataCountryListRU")
-                    ?? Resources.Load<TeamDataCountryListRU>("Data/TeamDataCountryListRU");
-
-        Debug.Log("[SO] Loaded via Resources: " + (countryList ? "OK" : "FAIL"));
-    }
-
-    private void RuntimeDataSelfTest()
-    {
-        Debug.Log($"[SO] countryList is {(countryList ? "ASSIGNED" : "NULL")}");
-        if (countryList != null)
-            Debug.Log($"[SO] Countries total: {countryList.Countries?.Count ?? -1}");
-
-        if (countryList != null && countryList.Countries != null)
-        {
-            for (int i = 0; i < Mathf.Min(3, countryList.Countries.Count); i++)
-            {
-                var c = countryList.Countries[i];
-                Debug.Log($"[SO] {i}: {c?.nameCountry} / {c?.capitalCountry} / flag={(c?.flag ? "OK" : "NULL")}");
-            }
-        }
-    }
-
-    // ======================== ХЕЛПЕРЫ ТЕКСТА ========================
-    private string GetLabelByMode(TeamDataCountry item, LabelMode mode)
+    private string BuildCorrectDisplayForMode(TeamDataCountry item, LabelMode mode)
     {
         if (item == null) return "";
-        if (mode == LabelMode.Country) return item.nameCountry;
-        if (mode == LabelMode.Capital) return item.capitalCountry;
-        return "";
-    }
-
-    private static string ComposeCountryCapital(string country, string capital)
-    {
-        if (string.IsNullOrEmpty(country)) country = "?";
-        if (string.IsNullOrEmpty(capital)) capital = "?";
-        return $"{country} — {capital}";
-    }
-
-    private static void Shuffle<T>(IList<T> list)
-    {
-        for (int i = list.Count - 1; i > 0; i--)
-        {
-            int j = UnityEngine.Random.Range(0, i + 1);
-            (list[i], list[j]) = (list[j], list[i]);
-        }
-    }
-
-    private bool HasNeededDataForAnyMode(TeamDataCountry c)
-    {
-        if (c == null) return false;
-        bool okCountry = !string.IsNullOrEmpty(c.nameCountry);
-        bool okCapital = !string.IsNullOrEmpty(c.capitalCountry);
-        return okCountry || okCapital;
-    }
-
-    private string GetLabelForDebug(TeamDataCountry item)
-    {
-        if (item == null) return "";
-        switch (labelMode)
+        switch (mode)
         {
             case LabelMode.Country: return item.nameCountry;
             case LabelMode.Capital: return item.capitalCountry;
@@ -878,134 +954,6 @@ public class QuisisFlag : MonoBehaviour
                 return ComposeCountryCapital(item.nameCountry, item.capitalCountry);
             default: return "";
         }
-    }
-
-    // ======================== УРОВНИ/РЕЖИМЫ/ФИНИШ ========================
-    private void ApplyLevelToMode(int lvl)
-    {
-        switch (Mathf.Clamp(lvl, 1, MaxLevel))
-        {
-            case 1: labelMode = LabelMode.Country; break;
-            case 2: labelMode = LabelMode.Capital; break;
-            case 3: labelMode = LabelMode.CountryWithCapital; break;
-            case 4: labelMode = LabelMode.CapitalWithCountry; break;
-        }
-    }
-
-    private int GetQuestionsForLevel(int lvl)
-    {
-        int i = Mathf.Clamp(lvl, 1, MaxLevel) - 1;
-        if (questionsPerLevel != null && i < questionsPerLevel.Length && questionsPerLevel[i] > 0)
-            return questionsPerLevel[i];
-        return Mathf.Max(1, defaultPerLevel);
-    }
-
-    private void FinishGame()
-    {
-        StopTimerIfAny();
-        _inputLocked = true;
-
-        if (clock != null) clock.Stop();
-
-        if (hintText && showHints)
-        {
-            hintText.text = finishMessage;
-            hintText.gameObject.SetActive(true);
-        }
-
-        if (panelWin != null)
-            panelWin.SetActive(true);
-
-        if (OnGameFinished != null)
-            OnGameFinished.Invoke();
-    }
-
-    // ======================== ПУБЛИЧНЫЕ УТИЛИТЫ ========================
-    public void JumpToLevel(int lvl)
-    {
-        lvl = Mathf.Clamp(lvl, 1, MaxLevel);
-        currentLevelNumber = lvl;
-        ApplyLevelToMode(currentLevelNumber);
-        UpdateQuestionTypeText();
-        UpdateLevelText();
-        countIndexLevel = GetQuestionsForLevel(currentLevelNumber);
-        Next();
-    }
-
-    public void AdvanceLevel()
-    {
-        if (currentLevelNumber < MaxLevel)
-        {
-            currentLevelNumber++;
-            ApplyLevelToMode(currentLevelNumber);
-            UpdateQuestionTypeText();
-            UpdateLevelText();
-            countIndexLevel = GetQuestionsForLevel(currentLevelNumber);
-            Next();
-        }
-        else
-        {
-            FinishGame();
-        }
-    }
-
-    public void SetLabelMode(LabelMode mode)
-    {
-        labelMode = mode;
-        switch (mode)
-        {
-            case LabelMode.Country: currentLevelNumber = 1; break;
-            case LabelMode.Capital: currentLevelNumber = 2; break;
-            case LabelMode.CountryWithCapital: currentLevelNumber = 3; break;
-            case LabelMode.CapitalWithCountry: currentLevelNumber = 4; break;
-        }
-        UpdateQuestionTypeText();
-        UpdateLevelText();
-        countIndexLevel = GetQuestionsForLevel(currentLevelNumber);
-        Next();
-    }
-
-    public void ToggleLabelMode() => AdvanceLevel();
-
-    public void EnableManualSubset(bool enable, bool rebuildNow = true)
-    {
-        useManualSubset = enable;
-        if (rebuildNow)
-        {
-            BuildPool();
-            countIndex = 0;
-            Next();
-        }
-    }
-
-    public void SetManualSubset(List<TeamDataCountry> subset, bool enable = true, bool rebuildNow = true)
-    {
-        manualSubset = subset ?? new List<TeamDataCountry>();
-        useManualSubset = enable;
-        if (rebuildNow)
-        {
-            BuildPool();
-            countIndex = 0;
-            Next();
-        }
-    }
-
-    public void SkipQuestion()
-    {
-        if (_pool == null || _pool.Count == 0 || _cachedButtons.Count == 0)
-            return;
-
-        StopTimerIfAny();
-        _inputLocked = false;
-        if (hintText) hintText.gameObject.SetActive(false);
-
-        _current = randomFlags ? _pool[_rng.Next(_pool.Count)] : _pool[countIndex % _pool.Count];
-        RenderCurrentQuestion();
-
-        if (!randomFlags)
-            countIndex = (countIndex + 1) % _pool.Count;
-
-        StartTimerIfEnabled();
     }
 
     private void UpdateQuestionTypeText()
@@ -1033,5 +981,205 @@ public class QuisisFlag : MonoBehaviour
     {
         if (!level) return;
         level.text = $"Уровень {currentLevelNumber}";
+    }
+
+    private string GetLabelForDebug(TeamDataCountry item)
+    {
+        if (item == null) return "";
+        switch (labelMode)
+        {
+            case LabelMode.Country: return item.nameCountry;
+            case LabelMode.Capital: return item.capitalCountry;
+            case LabelMode.CountryWithCapital:
+            case LabelMode.CapitalWithCountry:
+                return ComposeCountryCapital(item.nameCountry, item.capitalCountry);
+            default: return "";
+        }
+    }
+
+    private string GetLabelByMode(TeamDataCountry item, LabelMode mode)
+    {
+        if (item == null) return "";
+        if (mode == LabelMode.Country) return item.nameCountry;
+        if (mode == LabelMode.Capital) return item.capitalCountry;
+        return "";
+    }
+
+    private static string ComposeCountryCapital(string country, string capital)
+    {
+        if (string.IsNullOrEmpty(country)) country = "?";
+        if (string.IsNullOrEmpty(capital)) capital = "?";
+        return $"{country} — {capital}";
+    }
+
+    private static void Shuffle<T>(IList<T> list)
+    {
+        for (int i = list.Count - 1; i > 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            (list[i], list[j]) = (list[j], list[i]);
+        }
+    }
+
+    private static List<T> TakeDistinct<T>(IList<T> src, int count)
+    {
+        var result = new List<T>(count);
+        var used = new HashSet<T>();
+        for (int i = 0; i < src.Count && result.Count < count; i++)
+        {
+            if (used.Add(src[i])) result.Add(src[i]);
+        }
+        return result;
+    }
+
+    private bool HasNeededDataForAnyMode(TeamDataCountry c)
+    {
+        if (c == null) return false;
+        bool okCountry = !string.IsNullOrEmpty(c.nameCountry);
+        bool okCapital = !string.IsNullOrEmpty(c.capitalCountry);
+        bool okMixed = okCountry && okCapital;
+        return okCountry || okCapital || okMixed;
+    }
+
+    // ======================== УРОВНИ/РЕЖИМЫ/ФИНИШ ========================
+
+    private void ApplyLevelToMode(int lvl)
+    {
+        switch (Mathf.Clamp(lvl, 1, MaxLevel))
+        {
+            case 1: labelMode = LabelMode.Country; break;            // 1 = Country
+            case 2: labelMode = LabelMode.Capital; break;            // 2 = Capital
+            case 3: labelMode = LabelMode.CountryWithCapital; break; // 3 = страна фикс, столица верна одна
+            case 4: labelMode = LabelMode.CapitalWithCountry; break; // 4 = столица фикс, страна верна одна
+        }
+    }
+
+    private int GetQuestionsForLevel(int lvl)
+    {
+        int i = Mathf.Clamp(lvl, 1, MaxLevel) - 1;
+        if (questionsPerLevel != null && i < questionsPerLevel.Length && questionsPerLevel[i] > 0)
+            return questionsPerLevel[i];
+        return Mathf.Max(1, defaultPerLevel);
+    }
+
+    private void FinishGame()
+    {
+        StopTimerIfAny();
+        _inputLocked = true;
+
+        if (clock != null)
+            clock.Stop();
+
+        if (hintText && showHints)
+        {
+            hintText.text = finishMessage;
+            hintText.gameObject.SetActive(true);
+        }
+
+        if (panelWin != null)
+            panelWin.SetActive(true);
+
+        if (OnGameFinished != null)
+            OnGameFinished.Invoke();
+    }
+
+    // ======================== ПУБЛИЧНЫЕ УТИЛИТЫ ========================
+
+    public void JumpToLevel(int lvl)
+    {
+        lvl = Mathf.Clamp(lvl, 1, MaxLevel);
+        currentLevelNumber = lvl;
+        ApplyLevelToMode(currentLevelNumber);
+        UpdateLevelText();
+        UpdateQuestionTypeText();
+        countIndexLevel = GetQuestionsForLevel(currentLevelNumber);
+        Next();
+    }
+
+    public void AdvanceLevel()
+    {
+        if (currentLevelNumber < MaxLevel)
+        {
+            currentLevelNumber++;
+            ApplyLevelToMode(currentLevelNumber);
+            UpdateLevelText();
+            UpdateQuestionTypeText();
+            countIndexLevel = GetQuestionsForLevel(currentLevelNumber);
+            Next();
+        }
+        else
+        {
+            FinishGame();
+        }
+    }
+
+    public void SetLabelMode(LabelMode mode)
+    {
+        labelMode = mode;
+        // выровнять уровень под режим (1=Country, 2=Capital, 3=CountryWithCapital, 4=CapitalWithCountry)
+        switch (mode)
+        {
+            case LabelMode.Country: currentLevelNumber = 1; break;
+            case LabelMode.Capital: currentLevelNumber = 2; break;
+            case LabelMode.CountryWithCapital: currentLevelNumber = 3; break;
+            case LabelMode.CapitalWithCountry: currentLevelNumber = 4; break;
+        }
+        UpdateQuestionTypeText();
+        UpdateLevelText();
+        countIndexLevel = GetQuestionsForLevel(currentLevelNumber);
+        Next();
+    }
+
+    public void ToggleLabelMode()
+    {
+        AdvanceLevel();
+    }
+
+    public void EnableManualSubset(bool enable, bool rebuildNow = true)
+    {
+        useManualSubset = enable;
+        if (rebuildNow)
+        {
+            BuildPool();
+            countIndex = 0;
+            Next();
+        }
+    }
+
+    public void SetManualSubset(List<TeamDataCountry> subset, bool enable = true, bool rebuildNow = true)
+    {
+        manualSubset = subset ?? new List<TeamDataCountry>();
+        useManualSubset = enable;
+        if (rebuildNow)
+        {
+            BuildPool();
+            countIndex = 0;
+            Next();
+        }
+    }
+
+    /// <summary>
+    /// Пропускает текущий вопрос без начисления очков и без уменьшения оставшихся ходов.
+    /// Просто показывает следующий вопрос.
+    /// </summary>
+    public void SkipQuestion()
+    {
+        if (_pool == null || _pool.Count == 0 || button == null || button.Length == 0)
+            return;
+
+        StopTimerIfAny();
+        _inputLocked = false;
+        if (hintText) hintText.gameObject.SetActive(false);
+
+        // просто выбираем новый элемент без изменения уровня/счётчиков
+        _current = randomFlags ? _pool[_rng.Next(_pool.Count)] : _pool[countIndex % _pool.Count];
+        RenderCurrentQuestion();
+
+        // увеличиваем индекс только если не случайный порядок
+        if (!randomFlags)
+            countIndex = (countIndex + 1) % _pool.Count;
+
+        // перезапускаем таймер если он включён
+        StartTimerIfEnabled();
     }
 }
